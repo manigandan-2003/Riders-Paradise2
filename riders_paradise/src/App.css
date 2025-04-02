@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+.page {
+
+    margin: 0;
+    background-color: transparent;
+}
+
+
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    margin-right: 20px;
+
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 20px;
+}
+
+.leftnav:hover,
+.sign:hover {
+    text-decoration: underline;
+}
+
+.sign {
+    color: tomato;
+}
+
+.footer-user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    min-height: 10vh;
+}
+
+.footer-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-icon svg {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-icon span {
+    font-size: 12px;
+}
+
+.overlay-content {
+    margin-top: 20%;
+    margin-left: 70%;
+    color: white;
+}
+
+.buttons-in {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.button-app {
+    margin-right: 10px;
+}
+
+.bodydiv {
+    min-height: 80vh;
+}
+
+/* Loader */
+.loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    width: 80px;
+    height: 80px;
+    padding-left: 0;
+}
+
+.heading3 {
+    font-size: large;
+}
+
+.loader:after {
+    content: ' ';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fa9c23;
+    border-color: #fa9c23 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
