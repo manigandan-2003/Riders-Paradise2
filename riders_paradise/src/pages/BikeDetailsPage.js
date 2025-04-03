@@ -17,5 +17,4 @@ function BikeDetailsPage() {
     </div>
   );
 }
-
 export default BikeDetailsPage;

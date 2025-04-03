@@ -19,5 +19,4 @@ function TestRidePage() {
     </div>
   );
 }
-
 export default TestRidePage;
