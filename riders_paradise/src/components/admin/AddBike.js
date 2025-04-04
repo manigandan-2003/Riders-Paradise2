@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "../../styles/AddBike.css";
 import axios from "axios";
-
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
 const MySwal = withReactContent(Swal);
-
 const AddBikeForm = () => {
   const [error, setError] = useState("");
   const [brand, setBrand] = useState("");
@@ -27,7 +24,6 @@ const AddBikeForm = () => {
   const [quantity, setQuantity] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
   const [isAvailable, setIsAvailable] = useState(true);
-
   const resetForm = () => {
     setBrand("");
     setModel("");
@@ -48,7 +44,6 @@ const AddBikeForm = () => {
     setIsFeatured(false);
     setIsAvailable(true);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const bikeData = {
@@ -76,7 +71,6 @@ const AddBikeForm = () => {
       isFeatured,
       isAvailable,
     };
-
     const showAlert = ({ result }) => {
       MySwal.fire({
         title: "Added Succesfully",
@@ -85,12 +79,10 @@ const AddBikeForm = () => {
         confirmButtonText: "OK",
       });
     };
-
     axios
-      .post("https://riders-paradise.onrender.com/admin/addbike", bikeData)
+      .post("http://localhost:4000/v2/admin/addbike", bikeData)
       .then((result) => {
         console.log(result);
-
         if (result.status === 201) {
           showAlert(result.data.message);
           resetForm();
@@ -98,7 +90,6 @@ const AddBikeForm = () => {
       })
       .catch((err) => setError(err));
   };
-
   return (
     <div className="parent-addbike">
       <div className="container-addbike">
@@ -140,27 +131,31 @@ const AddBikeForm = () => {
                 />
                 <label htmlFor="year">Year</label>
               </div>
-              <div className="input-group">
-                <select
-                  name="type"
-                  value={type}
-                  onChange={(e) => setType(e.target.value)}
-                >
+              <div
+                className="input-box select-box"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <span className="icon"></span>
+                <select value={type}>
                   <option value="Mountain">Mountain</option>
                   <option value="Road">Road</option>
                   <option value="Hybrid">Hybrid</option>
-                  <option value="BMX">BMX</option>
-                  <option value="Cruiser">Cruiser</option>
-                  <option value="Other">Other</option>
+                  <option value="Gravel">Gravel</option>
+                  <option value="E-bike">E-bike</option>
                 </select>
+                <label htmlFor="type">Bike Type</label>
               </div>
+            </div>
+            <div className="column">
               <div className="input-box">
                 <span className="icon"></span>
                 <input
                   type="text"
                   name="frameMaterial"
                   value={frameMaterial}
-                  onChange={(e) => setFrameMaterial(e.target.value)}
+                  onChange={(e) =>
+                    setFrameMaterial(e.target.value)
+                  }
                   required
                 />
                 <label htmlFor="frameMaterial">Frame Material</label>
@@ -187,91 +182,10 @@ const AddBikeForm = () => {
                 />
                 <label htmlFor="color">Color</label>
               </div>
-            </div>
-            <div className="column">
               <div className="input-box">
                 <span className="icon"></span>
                 <input
-                  type="text"
-                  name="imageURL"
-                  value={imageURL}
-                  onChange={(e) => setImageURL(e.target.value)}
-                  required
-                />
-                <label htmlFor="imageURL">Image URL</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="textarea"
-                  name="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                />
-                <label htmlFor="description">Description</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="specifications.frameType"
-                  value={frameType}
-                  onChange={(e) => setFrameType(e.target.value)}
-                  required
-                />
-                <label htmlFor="specifications.frameType">Frame Type</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="specifications.gearSystem"
-                  value={gearSystem}
-                  onChange={(e) => setGearSystem(e.target.value)}
-                  required
-                />
-                <label htmlFor="specifications.gearSystem">Gear System</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="specifications.brakes"
-                  value={brakes}
-                  onChange={(e) => setBrakes(e.target.value)}
-                  required
-                />
-                <label htmlFor="specifications.brakes">Brakes</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="specifications.suspension"
-                  value={suspension}
-                  onChange={(e) => setSuspension(e.target.value)}
-                  required
-                />
-                <label htmlFor="specifications.suspension">Suspension</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="specifications.wheelSize"
-                  value={wheelSize}
-                  onChange={(e) => setWheelSize(e.target.value)}
-                  required
-                />
-                <label htmlFor="specifications.wheelSize">Wheel Size</label>
-              </div>
-            </div>
-            <div className="column">
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
+                  type="number"
                   name="price"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
@@ -279,50 +193,123 @@ const AddBikeForm = () => {
                 />
                 <label htmlFor="price">Price</label>
               </div>
+            </div>
+            <div className="input-box">
+              <span className="icon"></span>
+              <input
+                type="text"
+                name="imageURL"
+                value={imageURL}
+                onChange={(e) => setImageURL(e.target.value)}
+                required
+              />
+              <label htmlFor="imageURL">Image URL</label>
+            </div>
+            <div className="input-box">
+              <span className="icon"></span>
+              <textarea
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+              <label htmlFor="description">Description</label>
+            </div>
+            <div className="column">
               <div className="input-box">
                 <span className="icon"></span>
                 <input
                   type="text"
-                  name="inventory.quantity"
+                  name="frameType"
+                  value={frameType}
+                  onChange={(e) => setFrameType(e.target.value)}
+                  required
+                />
+                <label htmlFor="frameType">Frame Type</label>
+              </div>
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="text"
+                  name="gearSystem"
+                  value={gearSystem}
+                  onChange={(e) => setGearSystem(e.target.value)}
+                  required
+                />
+                <label htmlFor="gearSystem">Gear System</label>
+              </div>
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="text"
+                  name="brakes"
+                  value={brakes}
+                  onChange={(e) => setBrakes(e.target.value)}
+                  required
+                />
+                <label htmlFor="brakes">Brakes</label>
+              </div>
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="text"
+                  name="suspension"
+                  value={suspension}
+                  onChange={(e) => setSuspension(e.target.value)}
+                  required
+                />
+                <label htmlFor="suspension">Suspension</label>
+              </div>
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="text"
+                  name="wheelSize"
+                  value={wheelSize}
+                  onChange={(e) => setWheelSize(e.target.value)}
+                  required
+                />
+                <label htmlFor="wheelSize">Wheel Size</label>
+              </div>
+            </div>
+            <div className="column">
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="number"
+                  name="quantity"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                   required
                 />
-                <label htmlFor="inventory.quantity">Quantity</label>
+                <label htmlFor="quantity">Quantity</label>
               </div>
-              <div className="form-group" style={{ marginBottom: "20px" }}>
-                <div className="form-check">
+              <div className="checkbox-group">
+                <div className="checkbox">
                   <input
                     type="checkbox"
-                    name="isFeatured"
                     id="isFeatured"
                     checked={isFeatured}
-                    onChange={(e) => setIsFeatured(e.target.checked)}
+                    onChange={() => setIsFeatured(!isFeatured)}
                   />
                   <label htmlFor="isFeatured">Featured</label>
                 </div>
-              </div>
-              <div className="form-group" style={{ marginBottom: "20px" }}>
-                <div className="form-check">
+                <div className="checkbox">
                   <input
                     type="checkbox"
-                    name="isAvailable"
                     id="isAvailable"
                     checked={isAvailable}
-                    onChange={(e) => setIsAvailable(e.target.checked)}
+                    onChange={() => setIsAvailable(!isAvailable)}
                   />
                   <label htmlFor="isAvailable">Available</label>
                 </div>
               </div>
-              <button type="submit" className="bttn">
-                Add Bike to Inventory
-              </button>
             </div>
+            <button type="submit">Add Bike</button>
           </form>
         </div>
       </div>
     </div>
   );
 };
-
 export default AddBikeForm;

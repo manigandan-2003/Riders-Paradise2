@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../styles/Orders.css";
-
 const Contact = () => {
   const [bookedBikes, setBookedBikes] = useState([]);
   const [testBikes, setTestBikes] = useState([]);
@@ -9,46 +8,39 @@ const Contact = () => {
     const fetchBookedBikes = async () => {
       try {
         const response = await axios.get(
-          `https://riders-paradise.onrender.com/admin/getcontact`
+          "http://localhost:4000/v2/admin/getcontact"
         );
         setBookedBikes(response.data);
       } catch (error) {
         console.error("Error fetching booked bikes:", error);
       }
     };
-
     fetchBookedBikes();
   }, []);
-
   const tableStyle = {
     width: "100%",
     borderCollapse: "collapse",
     marginTop: "20px",
   };
-
   const cellStyle = {
     color: "white",
     border: "1px solid #ddd",
     padding: "8px",
     textAlign: "left",
   };
-
   const headingCellStyle = {
     ...cellStyle,
     backgroundColor: "#f2f2f2",
     color: "black",
   };
-
   const containerStyle = {
     display: "flex",
     justifyContent: "space-around",
     margin: "20px",
   };
-
   const sectionStyle = {
     width: "80%",
   };
-
   return (
     <div className="bookingdata">
       <div style={sectionStyle}>
@@ -77,5 +69,4 @@ const Contact = () => {
     </div>
   );
 };
-
 export default Contact;
