@@ -1,98 +1,79 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../../styles/Signin.css";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
-import {
-  loginFailed,
-  loginState,
-  loginSuccess,
-  loginProgress
-} from "../../redux/userSlice";
-
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import '../../styles/Login.css'
+import axios from 'axios'
 
 function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const navigate = useNavigate();
-  const [error, setError] = useState("");
-
-  const dispatch = useDispatch();
-  const loading = useSelector((state) => state.user.loading);
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    dispatch(loginProgress());
-    e.preventDefault();
+    e.preventDefault()
     axios
-      .post("https://riders-paradise.onrender.com/login", { email, password })
+      .post('http://localhost:4000/v2/user/login', { email, password })
       .then((result) => {
-        if (result.data.status === "Success") {
-          const user = result.data.user;
-          if (result.data.role === "admin") {
-            dispatch(loginState(user));
-            navigate("/admin");
-            dispatch(loginSuccess());
+        console.log(result)
+        if (result.data.status === 'Success') {
+          // Store the token in localStorage
+          const token = result.data.token
+          localStorage.setItem('token', token)
+
+          // Redirect based on user role
+          if (result.data.role === 'admin') {
+            navigate('/admin')
           } else {
-            dispatch(loginState(user));
-            navigate("/user/home");
-            dispatch(loginSuccess());
-            
+            navigate('/')
           }
+        } else {
+          // Handle login failure (e.g., display an error message)
+          alert(result.data.message)
         }
       })
-      .catch((err) => {
-        dispatch(loginFailed());
-        Swal.fire({
-          title: "Invalid Credentials!",
-          icon: "error",
-          confirmButtonText: "Ok",
-          text: "Please Check Your Credentials and Try Again!",
-        });
-      });
-  };
-
+      .catch((err) => console.log(err))
+  }
   return (
-    <div className="main-signin">
-      <div className="box-signin">
-        <span className="borderLine-signin"></span>
+    <div className="main-login">
+      <div className="box-login">
+        <span className="borderLine-login"></span>
         <form onSubmit={handleSubmit}>
-          <h2>Sign In</h2>
-          {error && <div className="error-message">{error}</div>}
-          <div className="inputBox-signin">
+          <h2>Sign in</h2>
+          <div className="inputBox-login">
             <input
-              type="text"
+              type="email"
               onChange={(e) => {
-                setEmail(e.target.value);
+                setEmail(e.target.value)
               }}
               required="required"
             ></input>
-            <span>Username</span>
+            <span>Email</span>
             <i></i>
           </div>
-          <div className="inputBox-signin">
+          <div className="inputBox-login">
             <input
               type="password"
               onChange={(e) => {
-                setPassword(e.target.value);
+                setPassword(e.target.value)
               }}
               required="required"
             ></input>
             <span>Password</span>
             <i></i>
           </div>
-          <div className="links-signin">
-            <Link to="/password/forgot">Forgot Password</Link>
-            <Link className="signup-signin" to="/signup">
-              Don't have an account
+          <div className="links-login">
+            <Link className="forget" to="/forget">
+              Forget Password?
+            </Link>
+            <Link className="signup" to="/signup">
+              Signup
             </Link>
           </div>
-          <span className="beforebutton-signin"></span>
-          <input className="login-signin" type="submit" value="Login"></input>
+          <span className="beforebutton-login"></span>
+          <input type="submit" value="Login"></input>
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
