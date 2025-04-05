@@ -1,0 +1,116 @@
+import React, { useState, useEffect } from "react";
+import "../../styles/Registration.css";
+import classNames from "classnames";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
+const Registration = () => {
+  const [selectedModel, setSelectedModel] = useState("");
+  const [userName, setName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [address, setAddress] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [ownershipStatus, setOwnershipStatus] = useState("");
+  const [financeRequired, setFinanceRequired] = useState("");
+  const [dateofBirth, setdateofBirth] = useState("");
+  const [email, setEmail] = useState("");
+  const [bikes, setBikes] = useState([]);
+  const [dealer, setDealer] = useState("");
+
+  const dealers = [
+    "Riders Paradise ",
+    "Riders Bikes",
+    "Paradise Hub",
+    "Speedy Bikes",
+    "Golden Wheels",
+  ];
+  const cities = [
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Chennai",
+    "Kolkata",
+    "Ahmedabad",
+    "Pune",
+    "Jaipur",
+    "Lucknow",
+    "Kanpur",
+    "Nagpur",
+    "Indore",
+    "Thane",
+    "Bhopal",
+    "Visakhapatnam",
+    "Pimpri-Chinchwad",
+    "Patna",
+    "Vadodara",
+    "Ghaziabad",
+    "Ludhiana",
+    "Agra",
+    "Nashik",
+    "Faridabad",
+  ];
+  const paymentMethods = ["UPI", "Card", "EMI"];
+  const showAlert = ({ result }) => {
+    MySwal.fire({
+      title: "Added Succesfully",
+      text: { result },
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/v2/bikes");
+        setBikes(response.data);
+      } catch (error) {
+        console.error("Error fetching bikes:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      model: selectedModel,
+      state: state,
+      address: address,
+      country: country,
+      city: city,
+      pincode: pincode,
+      dealer: dealer,
+      name: userName,
+      email: email,
+      phno: mobileNumber,
+      paymentMethod: paymentMethod,
+      ownershipStatus: ownershipStatus,
+      financeRequired: financeRequired,
+    };
+    console.log(formData);
+    axios
+      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
+      .then((result) => {
+        if (result.data.status === "Success") {
+          showAlert(result.data.message);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+  return (
+    <div className="container-r">
+      <h1 style={{ position: "relative", left: "500px" }}>
+        Bike Registration
+      </h1>
+      <div className="sec-container-r">
+        <form onSubmit={handleSubmit}>
+          <div className="form-r">
+            <div className="details personal-r">
+              <div className="fields-r">
+                <div className="input-field-r">
+                  <label>Full
