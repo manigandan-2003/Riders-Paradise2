@@ -65,20 +65,19 @@ const Registration = () => {
     MySwal.fire({
       title: "Added Succesfully",
       text: { result },
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-  };
-
-  useEffect(() => {
+      icon: "succuseEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/v2/bikes"
         );
         setBikes(response.data);
       } catch (error) {
         console.error("Error fetching bikes:", error);
+      }
+    };
+    fetchData();
+  }, []);:", error);
       }
     };
 
@@ -105,7 +104,7 @@ const Registration = () => {
     };
     console.log(formData);
     axios
-      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
+      .post("http://localhost:4000/v2/user/bookbike", formData)
       .then((result) => {
         if (result.data.status === "Success") {
           showAlert(result.data.message);
