@@ -105,7 +105,13 @@ const Registration = () => {
     };
     console.log(formData);
     axios
-      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
+      }
+    console.log(formData);
+    axios
+      .post("http://localhost:4000/v2/user/bookbike", formData)
+      .then((result) => {
+        if (result.data.status === "Success") {
+          showAlert(result.data.message);
       .then((result) => {
         if (result.data.status === "Success") {
           showAlert(result.data.message);
