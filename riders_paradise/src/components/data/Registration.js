@@ -63,31 +63,21 @@ const Registration = () => {
 
   const showAlert = ({ result }) => {
     MySwal.fire({
-      title: "Added Succesfully",
-      text: { result },
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-  };
-
-  useEffect(() => {
+     useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/v2/bikes"
         );
         setBikes(response.data);
       } catch (error) {
         console.error("Error fetching bikes:", error);
       }
     };
-
     fetchData();
   }, []);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const formData = {
       model: selectedModel,
       state: state,
@@ -105,7 +95,7 @@ const Registration = () => {
     };
     console.log(formData);
     axios
-      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
+      .post("http://localhost:4000/v2/user/bookbike", formData)
       .then((result) => {
         if (result.data.status === "Success") {
           showAlert(result.data.message);
@@ -113,10 +103,11 @@ const Registration = () => {
       })
       .catch((err) => console.log(err));
   };
-
   return (
     <div className="container-r">
       <h1 style={{ position: "relative", left: "500px" }}>Bike Registration</h1>
+      <div className="sec-container-r">
+        <form onSubmit={handleSubmit}>lative", left: "500px" }}>Bike Registration</h1>
       <div className="sec-container-r">
         <form onSubmit={handleSubmit}>
           <div className="form-r">
