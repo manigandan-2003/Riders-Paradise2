@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Signup.css";
 import axios from "axios";
-
 function SignUp() {
   const [userName, setName] = useState();
   const [email, setEmail] = useState();
@@ -15,7 +14,7 @@ function SignUp() {
     e.preventDefault();
     if (password === repassword) {
       axios
-        .post("https://riders-paradise.onrender.com/register", {
+        .post("http://localhost:4000/v2/user/register", {
           userName,
           email,
           password,
@@ -82,15 +81,12 @@ function SignUp() {
           </div>
           <div className="links-signup">
             <Link className="login-signup" to="/login">
-              Already have an account
+              {" "}
+              Already have an account{" "}
             </Link>
           </div>
           <span className="beforebutton-signup"></span>
-          <input
-            className="register-signup"
-            type="submit"
-            value="Register"
-          ></input>
+          <input className="register-signup" type="submit" value="Register"></input>
         </form>
       </div>
     </div>
