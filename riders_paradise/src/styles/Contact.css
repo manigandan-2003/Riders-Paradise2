@@ -2,8 +2,6 @@
 
 .body-contactpage {
     background-color: #fff;
-    margin: 0;
-    padding: 0;
 }
 
 .heading {
@@ -14,16 +12,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 20px; /* Added margin for spacing */
 }
 
 /* Header styles */
 
 .header1-contactpage {
+    padding-left: 1220px;
     height: 43px;
     background-color: rgb(255, 0, 0);
-    text-align: right; /* Align to the right */
-    padding-right: 20px; /* Add some padding */
 }
 
 .header2-contactpage {
@@ -38,8 +34,6 @@
 
 .header3-contactpage {
     position: sticky;
-    top: 0; /* Stick to the top */
-    z-index: 100; /* Ensure it's above other elements */
     height: 35px;
     background-color: rgb(0, 0, 0);
     padding-top: 10px;
@@ -54,8 +48,6 @@
     padding-left: 41px;
     padding-right: 41px;
     color: white;
-    text-decoration: none; /* Remove underlines from links */
-    display: inline-block; /* Display as inline blocks */
 }
 
 .menu-contactpage:hover {
@@ -65,67 +57,57 @@
 
 #cus-contactpage {
     padding-top: 50px;
-    text-align: center; /* Center the content */
+    padding-left: 670px;
 }
 
 #first-contactpage {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 /* Form styles */
 
 .div-contactpage {
-    margin-bottom: 15px;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
     font-size: 17px;
-    text-align: left;
-    width: 100%;
 }
 
 .w3-input-contactpage {
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    width: 100%;
-    padding: 10px;
+    border-color: rgba(0, 0, 0, 0.11);
+    width: 620px;
     background-color: rgba(216, 216, 216, 0.443);
-    box-sizing: border-box;
 }
 
 #box1-contactpage,
 #box2-contactpage,
 #box3-contactpage {
-    height: auto;
-    padding: 10px;
+    height: 40px;
 }
 
 #box4-contactpage {
-    height: auto;
-    padding: 10px;
+    height: 150px;
 }
 
 .div-contactpage button {
-    display: block;
-    margin: 20px auto;
+    margin-left: 220px;
     height: 50px;
     width: 180px;
     font-size: 20px;
     color: #fff;
     background-color: rgba(219, 0, 0, 0.842);
     font-family: 'Times New Roman';
-    border: none;
-    cursor: pointer;
 }
 
 /* Contact info styles */
 
 #second-contactpage {
     background-color: rgba(216, 216, 216, 0.443);
-    width: 100%;
+    width: 500px;
     border-radius: 20px;
-    padding: 20px;
-    margin: 20px 0;
-    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 30px;
 }
 
 #second-contactpage img {
@@ -133,7 +115,6 @@
     width: 25px;
     padding-right: 20px;
     padding-top: 20px;
-    vertical-align: middle;
 }
 
 .details-contactpage,
@@ -141,83 +122,71 @@
 .details2-contactpage {
     padding-left: 20px;
     margin-left: 20px;
-    width: auto;
+    width: 360px;
     color: rgb(255, 0, 0);
-    display: inline-block;
 }
 
 .line1-contactpage {
-    padding-left: 0;
+    padding-left: 170px;
     padding-bottom: 0px;
-    text-align: left;
 }
 
 .line2-contactpage {
-    padding-left: 0;
+    padding-left: 180px;
     color: rgb(255, 0, 0);
     padding-bottom: 20px;
-    text-align: left;
 }
 
 .line3-contactpage,
 .line4-contactpage {
-    padding-top: 10px;
-    text-align: left;
+    padding-top: 30px;
 }
 
 /* Footer styles */
 
 .header4-contactpage {
     margin-top: 50px;
-    height: auto;
+    height: 100px;
     width: 100%;
     background-color: rgba(216, 216, 216, 0.443);
-    padding: 20px;
-    box-sizing: border-box;
 }
 
 .footer-contactpage {
     background-color: black;
-    height: auto;
+    height: 500px;
     width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
 .row1-contactpage h3 {
     color: white;
-    padding-left: 0;
-    margin-bottom: 20px;
+    padding-left: 80px;
 }
 
 #logofoot-contactpage {
     border-radius: 30px;
-    padding-left: 0;
+    padding-left: 70px;
     height: 130px;
     width: 150px;
-    margin-bottom: 20px;
 }
 
 #soc-contactpage {
-    padding-left: 0;
-    margin-bottom: 20px;
+    padding-left: 50px;
 }
 
 #heading-contactpage {
     color: white;
-    margin-bottom: 20px;
 }
 
 .row2-contactpage div,
 .row3-contactpage div,
 .row4-contactpage div {
     color: white;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .row5-contactpage img {
     height: 20px;
-    padding-top: 10px;
+    padding-top: 30px;
     padding-right: 10px;
     width: 20px;
 }
@@ -227,16 +196,16 @@
 }
 
 #row5last-contactpage {
-    padding-bottom: 10px;
+    padding-bottom: 100px;
 }
 
 #row4last-contactpage,
 #row3last-contactpage {
-    padding-bottom: 10px;
+    padding-bottom: 275px;
 }
 
 #row2last-contactpage {
-    padding-bottom: 10px;
+    padding-bottom: 237px;
 }
 
 .footer-contactpage j {
@@ -245,60 +214,4 @@
 
 .footer-contactpage m:hover {
     background-color: rgba(255, 0, 0, 0.473);
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .header1-contactpage {
-        padding-left: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .header3-contactpage {
-        padding-left: 10px;
-    }
-
-    .menu-contactpage {
-        font-size: 16px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    #cus-contactpage {
-        padding-top: 20px;
-    }
-
-    #first-contactpage {
-        padding: 10px;
-    }
-
-    .w3-input-contactpage {
-        width: 100%;
-    }
-
-    #second-contactpage {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .line1-contactpage,
-    .line2-contactpage {
-        padding-left: 0;
-    }
-
-    .header4-contactpage {
-        margin-top: 20px;
-    }
-
-    /* Adjust footer elements as needed */
-    .row1-contactpage h3 {
-        padding-left: 0;
-    }
-
-    #logofoot-contactpage {
-        padding-left: 0;
-    }
-
-    #soc-contactpage {
-        padding-left: 0;
-    }
 }
