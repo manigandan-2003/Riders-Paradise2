@@ -51,96 +51,143 @@ const StyledLink = styled.a`
 `;
 
 function Contact() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phnno, setPhoneNo] = useState();
-  const [comment, setComment] = useState();
-  const [error, setError] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phnno, setPhoneNo] = useState("");
+  const [comment, setComment] = useState("");
+  const [errors, setErrors] = useState({});
 
   const showAlert = ({ result }) => {
     MySwal.fire({
-      title: "Submitted Succesfully",
-      text: { result },
+      title: "Submitted Successfully",
+      text: result,
       icon: "success",
       confirmButtonText: "OK",
     });
   };
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (!name) {
+      tempErrors["name"] = "Name is required";
+      isValid = false;
+    }
+    if (!email) {
+      tempErrors["email"] = "Email is required";
+      isValid = false;
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      tempErrors["email"] = "Email is not valid";
+      isValid = false;
+    }
+    if (!phnno) {
+      tempErrors["phnno"] = "Phone number is required";
+      isValid = false;
+    }
+    if (!comment) {
+      tempErrors["comment"] = "Comment is required";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     try {
-      axios
-        .post("https://riders-paradise.onrender.com/user/contact", {
+      const result = await axios.post(
+        "https://riders-paradise.onrender.com/user/contact",
+        {
           name: name,
           email: email,
           phnno: phnno,
           comment: comment,
-        })
-        .then((result) => {
-          if (result.data.status === "Success") {
-            showAlert(result.data.message);
-          }
-        });
+        }
+      );
+
+      if (result.data.status === "Success") {
+        showAlert(result.data);
+        setName("");
+        setEmail("");
+        setPhoneNo("");
+        setComment("");
+        setErrors({});
+      }
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      MySwal.fire({
+        title: "Error",
+        text: "Failed to submit form. Please try again later.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 
   return (
-    <div class="body-cotactpage">
+    <div className="body-cotactpage">
       <h2 id="cus-contactpage">CONTACT US</h2>
-      <table>
-        {error && (
-          <div className="error-message">
-            <p>Error:</p>
-            <p>Name: {error.name}</p>
-            <p>Message: {error.message}</p>
-          </div>
-        )}
+      <table className="contact-table">
         <td id="first-contactpage">
-          <form onSubmit={handleSubmit}>
-            <div class="div-contactpage">Name</div>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="div-contactpage">
+              Name
+              {errors.name && <p className="error-text">{errors.name}</p>}
+            </div>
             <input
               id="box1-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               type="text"
               value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
+              onChange={(e) => setName(e.target.value)}
             />
-            <div class="div-contactpage">Email</div>
+
+            <div className="div-contactpage">
+              Email
+              {errors.email && <p className="error-text">{errors.email}</p>}
+            </div>
             <input
               id="box2-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="email"
               value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <div class="div-contactpage">Mobile</div>
+
+            <div className="div-contactpage">
+              Mobile
+              {errors.phnno && <p className="error-text">{errors.phnno}</p>}
+            </div>
             <input
               id="box3-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="tel"
               value={phnno}
-              onChange={(e) => {
-                setPhoneNo(e.target.value);
-              }}
+              onChange={(e) => setPhoneNo(e.target.value)}
             />
-            <div class="div-contactpage">comment</div>
-            <input
+
+            <div className="div-contactpage">
+              Comment
+              {errors.comment && <p className="error-text">{errors.comment}</p>}
+            </div>
+            <textarea
               id="box4-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               value={comment}
-              onChange={(e) => {
-                setComment(e.target.value);
-              }}
+              onChange={(e) => setComment(e.target.value)}
             />
-            <div class="div-contactpage">
-              <button type="submit">SUBMIT</button>
+
+            <div className="div-contactpage">
+              <button type="submit" className="submit-button">
+                SUBMIT
+              </button>
             </div>
           </form>
         </td>

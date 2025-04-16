@@ -6,7 +6,7 @@ function Footer() {
       className="footer-user"
       style={{
         minHeight: "10vh",
-        position: "sticky",
+        position: "relative",
         bottom: "0",
       }}
     >
