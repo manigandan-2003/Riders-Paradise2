@@ -18,7 +18,6 @@ const ContactInfoContainer = styled.div`
   justify-content: center;
   padding: 20px;
   border-radius: 10px;
-  width: 100%;
 `;
 
 const Divider = styled.div`
