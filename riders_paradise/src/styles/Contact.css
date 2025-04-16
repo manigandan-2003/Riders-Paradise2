@@ -12,12 +12,13 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
 /* Header styles */
 
 .header1-contactpage {
-    padding-left: 1220px;
+    padding-left: 80%; /* Adjusted for responsiveness */
     height: 43px;
     background-color: rgb(255, 0, 0);
 }
@@ -37,7 +38,7 @@
     height: 35px;
     background-color: rgb(0, 0, 0);
     padding-top: 10px;
-    padding-left: 120px;
+    padding-left: 10%; /* Adjusted for responsiveness */
 }
 
 .menu-contactpage {
@@ -57,12 +58,14 @@
 
 #cus-contactpage {
     padding-top: 50px;
-    padding-left: 670px;
+    padding-left: 50%; /* Adjusted for responsiveness */
+    transform: translateX(-50%); /* Center the element */
 }
 
 #first-contactpage {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 10%; /* Adjusted for responsiveness */
+    padding-right: 10%; /* Adjusted for responsiveness */
+    margin-bottom: 30px; /* Added margin for spacing */
 }
 
 /* Form styles */
@@ -76,8 +79,10 @@
 
 .w3-input-contactpage {
     border-color: rgba(0, 0, 0, 0.11);
-    width: 620px;
+    width: 100%; /* Make the input field responsive */
+    max-width: 620px; /* Set a maximum width */
     background-color: rgba(216, 216, 216, 0.443);
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 #box1-contactpage,
@@ -91,23 +96,30 @@
 }
 
 .div-contactpage button {
-    margin-left: 220px;
+    margin-left: 0; /* Reset margin */
+    margin-top: 10px; /* Added margin for spacing */
     height: 50px;
     width: 180px;
     font-size: 20px;
     color: #fff;
     background-color: rgba(219, 0, 0, 0.842);
     font-family: 'Times New Roman';
+    display: block; /* Make the button a block element */
+    margin-left: auto; /* Right-align the button */
+    margin-right: auto; /* Right-align the button */
 }
 
 /* Contact info styles */
 
 #second-contactpage {
     background-color: rgba(216, 216, 216, 0.443);
-    width: 500px;
+    width: 90%; /* Make the contact info section responsive */
+    max-width: 500px; /* Set a maximum width */
     border-radius: 20px;
     padding: 10px;
-    margin-left: 30px;
+    margin-left: auto; /* Center the element */
+    margin-right: auto; /* Center the element */
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
 #second-contactpage img {
@@ -122,17 +134,19 @@
 .details2-contactpage {
     padding-left: 20px;
     margin-left: 20px;
-    width: 360px;
+    width: auto; /* Adjusted for responsiveness */
+    max-width: 360px; /* Set a maximum width */
     color: rgb(255, 0, 0);
+    word-wrap: break-word; /* Ensures long words don't break the layout */
 }
 
 .line1-contactpage {
-    padding-left: 170px;
+    padding-left: 10%; /* Adjusted for responsiveness */
     padding-bottom: 0px;
 }
 
 .line2-contactpage {
-    padding-left: 180px;
+    padding-left: 10%; /* Adjusted for responsiveness */
     color: rgb(255, 0, 0);
     padding-bottom: 20px;
 }
@@ -153,8 +167,8 @@
 
 .footer-contactpage {
     background-color: black;
-    height: 500px;
     width: 100%;
+    padding-bottom: 20px; /* added padding to avoid content overlap*/
 }
 
 .row1-contactpage h3 {
@@ -214,4 +228,76 @@
 
 .footer-contactpage m:hover {
     background-color: rgba(255, 0, 0, 0.473);
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 768px) {
+    .header1-contactpage {
+        padding-left: 70%; /* Adjusted for smaller screens */
+    }
+
+    .header3-contactpage {
+        padding-left: 5%; /* Adjusted for smaller screens */
+    }
+
+    #cus-contactpage {
+        padding-left: 5%; /* Adjusted for smaller screens */
+        transform: none; /* Remove centering */
+    }
+
+    #first-contactpage {
+        padding-left: 5%; /* Adjusted for smaller screens */
+        padding-right: 5%; /* Adjusted for smaller screens */
+    }
+
+    .div-contactpage button {
+        margin-left: auto; /* Adjusted for smaller screens */
+        margin-right: auto; /* Adjusted for smaller screens */
+    }
+
+    #second-contactpage {
+        width: 95%; /* Adjusted for smaller screens */
+    }
+
+    .line1-contactpage {
+        padding-left: 5%; /* Adjusted for smaller screens */
+    }
+
+    .line2-contactpage {
+        padding-left: 5%; /* Adjusted for smaller screens */
+    }
+
+    .row1-contactpage h3 {
+        padding-left: 20px; /* Adjusted for smaller screens */
+    }
+
+    #soc-contactpage {
+        padding-left: 20px; /* Adjusted for smaller screens */
+    }
+    
+    #row4last-contactpage,
+    #row3last-contactpage,
+    #row2last-contactpage {
+        padding-bottom: 20px; /* Adjusted to prevent overlap */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-contactpage {
+        font-size: 16px; /* Further adjusted for very small screens */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .div-contactpage button {
+        width: 100%; /* Make button full width on very small screens */
+        max-width: 100%;
+        margin-left: 0; /* ensure button is centered*/
+        margin-right: 0;
+    }
+
+    #logofoot-contactpage {
+        padding-left: 20px; /* Adjusted for smaller screens */
+    }
 }
