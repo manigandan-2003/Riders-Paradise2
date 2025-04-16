@@ -17,7 +17,7 @@ function BikeDetails() {
       try {
         console.log(id);
         const response = await axios.get(
-          `https://riders-paradise.onrender.com/explore/bikes/${id}`
+          `http://localhost:4000/v2/bike/${id}`
         );
         setBike(response.data);
       } catch (error) {
