@@ -38,7 +38,7 @@ const editBike = asyncHandler(async (req, res) => {
 });
 
 const deleteBike = asyncHandler(async (req, res) => {
-  const bikeId = req.params.id;
+  const bikeId = req.params._id;
 
   try {
     const deletedBike = await Bike.findByIdAndDelete(bikeId);
