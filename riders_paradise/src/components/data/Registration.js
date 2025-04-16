@@ -74,7 +74,7 @@ const Registration = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/explore/bikes"
         );
         setBikes(response.data);
       } catch (error) {
@@ -105,7 +105,7 @@ const Registration = () => {
     };
     console.log(formData);
     axios
-      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
+      .post("http://localhost:4000/v2/user/bookbike", formData)
       .then((result) => {
         if (result.data.status === "Success") {
           showAlert(result.data.message);

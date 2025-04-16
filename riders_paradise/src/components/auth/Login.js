@@ -25,7 +25,7 @@ function Login() {
     dispatch(loginProgress());
     e.preventDefault();
     axios
-      .post("https://riders-paradise.onrender.com/login", { email, password })
+      .post("http://localhost:4000/v2/user/login", { email, password })
       .then((result) => {
         if (result.data.status === "Success") {
           const user = result.data.user;
