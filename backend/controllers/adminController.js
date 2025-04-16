@@ -2,18 +2,17 @@ const Bike = require("../models/bikeSchema");
 const TestRide = require("../models/testRideSchema");
 const BookNow = require("../models/bookNowSchema");
 const Contact = require("../models/ContactSchema");
-const asyncHandler = require("express-async-handler");
 
-const addBike = asyncHandler(async (req, res) => {
+const addBike = async (req, res) => {
   try {
     const newBike = await Bike.create(req.body);
     res.status(201).json({ message: "Bike added successfully", bike: newBike });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
-const editBike = asyncHandler(async (req, res) => {
+const editBike = async (req, res) => {
   const bikeId = req.params._id;
 
   try {
@@ -35,9 +34,9 @@ const editBike = asyncHandler(async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
-const deleteBike = asyncHandler(async (req, res) => {
+const deleteBike = async (req, res) => {
   const bikeId = req.params.id;
 
   try {
@@ -53,34 +52,34 @@ const deleteBike = asyncHandler(async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
-const getTestRides = asyncHandler(async (req, res) => {
+const getTestRides = async (req, res) => {
   try {
     const testRides = await TestRide.find();
     res.json(testRides);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
-const getBooked = asyncHandler(async (req, res) => {
+const getBooked = async (req, res) => {
   try {
     const booked = await BookNow.find();
     res.json(booked);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
-const getContact = asyncHandler(async (req, res) => {
+const getContact = async (req, res) => {
   try {
     const contactreq = await Contact.find();
     res.json(contactreq);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
 
 module.exports = {
   addBike,
