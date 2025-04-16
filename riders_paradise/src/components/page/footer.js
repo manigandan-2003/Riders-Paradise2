@@ -6,8 +6,9 @@ function Footer() {
       className="footer-user"
       style={{
         minHeight: "10vh",
-        position: "sticky",
+        position: "relative",
         bottom: "0",
+        marginTop: "50px",
       }}
     >
       <div className="license">
