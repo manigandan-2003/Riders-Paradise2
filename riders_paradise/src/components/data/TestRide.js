@@ -53,7 +53,7 @@ function TestRide() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/v2/user/explore/bikes"
         );
         setBikes(response.data);
       } catch (error) {
@@ -79,7 +79,7 @@ function TestRide() {
       agreeTerms: agreement,
     };
     axios
-      .post("https://riders-paradise.onrender.com/user/testride", formData)
+      .post("http://localhost:4000/v2/user/testride", formData)
       .then((result) => {
         if (result.data.status === "Success") {
           console.log(result);
@@ -207,8 +207,7 @@ function TestRide() {
               <option value="Karnataka">Karnataka</option>
               <option value="Kerala">Kerala</option>
               <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
+              <option value="Maharashtra">Maharashtra</n              <option value="Manipur">Manipur</option>
               <option value="Meghalaya">Meghalaya</option>
               <option value="Mizoram">Mizoram</option>
               <option value="Nagaland">Nagaland</option>
