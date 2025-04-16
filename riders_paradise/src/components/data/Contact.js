@@ -8,114 +8,46 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-const ContactInfoContainer = styled.div`
+const ContactInfoContainer = styled.td`
+  height: 45vh;
   position: relative;
   background-color: lightblue;
   font-size: 1em;
   display: flex;
   flex-direction: column;
+  top: 100px;
+  left: 50px;
+  font-weight: w100;
+  margin-bottom: 10px;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
 `;
 
 const Divider = styled.div`
   border-top: 1px solid #ccc;
-  margin: 15px 0;
-  width: 80%;
+  margin: 10px 0;
 `;
 
 const ContactItem = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 15px;
-  width: 100%;
 `;
 
 const Icon = styled.img`
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  vertical-align: start;
+  margin-right: 5px;
 `;
 
 const Label = styled.span`
   font-weight: bold;
-  width: 120px;
-  margin-right: 10px;
-  text-align: left;
+  width: 80px;
+  margin-right: 5px;
 `;
 
 const StyledLink = styled.a`
   color: red;
   text-decoration: underline;
-  word-break: break-word;
-`;
-
-const FormContainer = styled.div`
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 10px;
-`;
-
-const InputField = styled.input`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-`;
-
-const TextAreaField = styled.textarea`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  resize: vertical;
-`;
-
-const SubmitButton = styled.button`
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-
-  &:hover {
-    background-color: #367c39;
-  }
-`;
-
-const ErrorText = styled.p`
-  color: red;
-  margin-top: -10px;
-  margin-bottom: 10px;
-`;
-
-const ContactPageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-`;
-
-const ContactSection = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 function Contact() {
@@ -200,100 +132,121 @@ function Contact() {
   };
 
   return (
-    <ContactPageContainer>
-      <h2 style={{ marginBottom: "20px", textAlign: "center" }}>CONTACT US</h2>
-      <ContactSection>
-        <FormContainer>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Name</label>
-              {errors.name && <ErrorText>{errors.name}</ErrorText>}
+    <div className="body-cotactpage">
+      <h2 id="cus-contactpage">CONTACT US</h2>
+      <table className="contact-table">
+        <td id="first-contactpage">
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="div-contactpage">
+              Name
+              {errors.name && <p className="error-text">{errors.name}</p>}
             </div>
-            <InputField
+            <input
+              id="box1-contactpage"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               type="text"
-              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
 
-            <div>
-              <label htmlFor="email">Email</label>
-              {errors.email && <ErrorText>{errors.email}</ErrorText>}
+            <div className="div-contactpage">
+              Email
+              {errors.email && <p className="error-text">{errors.email}</p>}
             </div>
-            <InputField
+            <input
+              id="box2-contactpage"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               type="email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <div>
-              <label htmlFor="phnno">Mobile</label>
-              {errors.phnno && <ErrorText>{errors.phnno}</ErrorText>}
+            <div className="div-contactpage">
+              Mobile
+              {errors.phnno && <p className="error-text">{errors.phnno}</p>}
             </div>
-            <InputField
+            <input
+              id="box3-contactpage"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               type="tel"
-              id="phnno"
               value={phnno}
               onChange={(e) => setPhoneNo(e.target.value)}
             />
 
-            <div>
-              <label htmlFor="comment">Comment</label>
-              {errors.comment && <ErrorText>{errors.comment}</ErrorText>}
+            <div className="div-contactpage">
+              Comment
+              {errors.comment && <p className="error-text">{errors.comment}</p>}
             </div>
-            <TextAreaField
-              id="comment"
-              rows="4"
+            <textarea
+              id="box4-contactpage"
+              className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             />
 
-            <div>
-              <SubmitButton type="submit">SUBMIT</SubmitButton>
+            <div className="div-contactpage">
+              <button type="submit" className="submit-button">
+                SUBMIT
+              </button>
             </div>
           </form>
-        </FormContainer>
+        </td>
+        <div className="raised-container">
+          <ContactInfoContainer>
+            <Divider />
 
-        <ContactInfoContainer>
-          <Divider />
+            <ContactItem>
+              <Icon src="images/pin.png" alt="" />
+              <Label>Address:</Label>
+              <StyledLink href="#" className="details-contactpage">
+                Riders Paradise Chennai TamilNadu
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/pin.png" alt="Address" />
-            <Label>Address:</Label>
-            <StyledLink href="#">Riders Paradise Chennai TamilNadu</StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/call.png" alt="" />
+              <Label>Phone:</Label>
+              <StyledLink
+                href="tel:+919717785190"
+                className="details1-contactpage"
+              >
+                +91-1234567890
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/call.png" alt="Phone" />
-            <Label>Phone:</Label>
-            <StyledLink href="tel:+911234567890">+91-1234567890</StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Email:</Label>
+              <StyledLink
+                href="mailto:admin@ridersparadise.com"
+                className="details2-contactpage"
+              >
+                admin@ridersparadise.com
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/mail.png" alt="Email" />
-            <Label>Email:</Label>
-            <StyledLink href="mailto:admin@ridersparadise.com">
-              admin@ridersparadise.com
-            </StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Nodal Officer:</Label>
+              <StyledLink
+                href="mailto:eshop.support@heromotocorp.com"
+                className="details2-contactpage"
+              >
+                Varun Venkateshs
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/mail.png" alt="Nodal Officer" />
-            <Label>Nodal Officer:</Label>
-            <StyledLink href="mailto:eshop.support@heromotocorp.com">
-              Varun Venkateshs
-            </StyledLink>
-          </ContactItem>
-
-          <ContactItem>
-            <Icon src="images/mail.png" alt="Grievance Officer" />
-            <Label>Grievance Officer:</Label>
-            <StyledLink>Manigandan</StyledLink>
-          </ContactItem>
-        </ContactInfoContainer>
-      </ContactSection>
-    </ContactPageContainer>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Grievance Officer:</Label>
+              <StyledLink className="details2-contactpage">
+                Manigandan
+              </StyledLink>
+            </ContactItem>
+          </ContactInfoContainer>
+        </div>
+      </table>
+    </div>
   );
 }
 
