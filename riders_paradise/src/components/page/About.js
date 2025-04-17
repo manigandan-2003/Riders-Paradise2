@@ -20,47 +20,47 @@ import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 function About() {
 
   return (
-    <div className="main-container">
+    <div className="main-container" style={{ backgroundColor: '#0F1923', color: '#fff' }}>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
     <div>
-      <div class="page-about shadow">
-        <div class="main-container shadow">
+      <div class="page-about shadow" style={{ backgroundColor: '#262A33', padding: '20px', borderRadius: '10px' }}>
+        <div class="main-container shadow" style={{ marginBottom: '20px' }}>
           <MDBContainer>
             <br />
             <br />
             <MDBRow>
               <MDBCol sm={12} md={4}>
-                <div class="container">
+                <div class="container" style={{ textAlign: 'center' }}>
                   <img
                     src={imgallen}
                     alt="Allen"
-                    style={{ width: "65%", borderRadius: "100%" }}
+                    style={{ width: "65%", borderRadius: "100%", border: '2px solid #FF4655' }}
                   />
                   <br />
-                  <Link className="Link" to="https://www.linkedin.com/in/all3n-f3bi/">
-                    <i className="fa fa-linkedin" />
+                  <Link className="Link" to="https://www.linkedin.com/in/all3n-f3bi/" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-linkedin" style={{ fontSize: '24px' }} />
                   </Link>
-                  <Link className="Link" to="https://github.com/all3n2601">
-                    <i className="fa fa-github" />
+                  <Link className="Link" to="https://github.com/all3n2601" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-github" style={{ fontSize: '24px' }} />
                   </Link>
                 </div>
               </MDBCol>
 
               <MDBCol>
                 <div class="container">
-                  <h2 className="h-about">Allen Febi</h2>
+                  <h2 className="h-about" style={{ color: '#FF4655' }}>Allen Febi</h2>
                   <p className="p-about">Vellore Institute of Technology Amaravati</p>
                 </div>
 
-                <hr />
+                <hr style={{ borderColor: '#FF4655' }} />
 
                 <MDBContainer>
                   <MDBRow>
                     <MDBCol sm={2} lg={2} md={2}>
-                      <h6 className="m-4">Bio </h6>
+                      <h6 className="m-4" style={{ color: '#FF4655' }}>Bio </h6>
                     </MDBCol>
                     <MDBCol>
                       <p class="bio">
@@ -76,40 +76,40 @@ function About() {
           </MDBContainer>
         </div>
 
-        <div class="main-container shadow">
+        <div class="main-container shadow" style={{ marginBottom: '20px' }}>
           <MDBContainer>
             <br />
             <br />
             <MDBRow>
               <MDBCol sm={12} md={4}>
-                <div class="container">
+                <div class="container" style={{ textAlign: 'center' }}>
                   <img
                     src={imgrahul}
                     alt="Rahul"
-                    style={{ width: "65%", borderRadius: "100%" }}
+                    style={{ width: "65%", borderRadius: "100%", border: '2px solid #FF4655' }}
                   />
                   <br />
-                  <Link className="Link" to="https://www.linkedin.com/in/rahul-palanivel-629464279/">
-                    <i className="fa fa-linkedin" />
+                  <Link className="Link" to="https://www.linkedin.com/in/rahul-palanivel-629464279/" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-linkedin" style={{ fontSize: '24px' }} />
                   </Link>
-                  <Link className="Link" to="https://github.com/rahulpalanivel">
-                    <i className="fa fa-github" />
+                  <Link className="Link" to="https://github.com/rahulpalanivel" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-github" style={{ fontSize: '24px' }} />
                   </Link>
                 </div>
               </MDBCol>
 
               <MDBCol>
                 <div class="container">
-                  <h2 className="h-about">Rahul Palanivel</h2>
+                  <h2 className="h-about" style={{ color: '#FF4655' }}>Rahul Palanivel</h2>
                   <p className="p-about">Vellore Institute of Technology Amaravati</p>
                 </div>
 
-                <hr />
+                <hr style={{ borderColor: '#FF4655' }} />
 
                 <MDBContainer>
                   <MDBRow>
                     <MDBCol sm={2} lg={2} md={2}>
-                      <h6 className="m-4">Bio </h6>
+                      <h6 className="m-4" style={{ color: '#FF4655' }}>Bio </h6>
                     </MDBCol>
                     <MDBCol>
                       <p class="bio">
@@ -125,40 +125,40 @@ function About() {
           </MDBContainer>
         </div>
 
-        <div class="main-container shadow">
+        <div class="main-container shadow" style={{ marginBottom: '20px' }}>
           <MDBContainer>
             <br />
             <br />
             <MDBRow>
               <MDBCol sm={12} md={4}>
-                <div class="container">
+                <div class="container" style={{ textAlign: 'center' }}>
                   <img
                     src={imgmani}
                     alt="Mani"
-                    style={{ width: "65%", borderRadius: "100%" }}
+                    style={{ width: "65%", borderRadius: "100%", border: '2px solid #FF4655' }}
                   />
                   <br />
-                  <Link className="Link" to="https://www.linkedin.com/in/manigandan-n">
-                    <i className="fa fa-linkedin" />
+                  <Link className="Link" to="https://www.linkedin.com/in/manigandan-n" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-linkedin" style={{ fontSize: '24px' }} />
                   </Link>
-                  <Link className="Link" to="https://github.com/manigandan-2003">
-                    <i className="fa fa-github" />
+                  <Link className="Link" to="https://github.com/manigandan-2003" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-github" style={{ fontSize: '24px' }} />
                   </Link>
                 </div>
               </MDBCol>
 
               <MDBCol>
                 <div class="container">
-                  <h2 className="h-about">Manigandan Nachiappan</h2>
+                  <h2 className="h-about" style={{ color: '#FF4655' }}>Manigandan Nachiappan</h2>
                   <p className="p-about">Vellore Institute of Technology Amaravati</p>
                 </div>
 
-                <hr />
+                <hr style={{ borderColor: '#FF4655' }} />
 
                 <MDBContainer>
                   <MDBRow>
                     <MDBCol sm={2} lg={2} md={2}>
-                      <h6 className="m-4">Bio </h6>
+                      <h6 className="m-4" style={{ color: '#FF4655' }}>Bio </h6>
                     </MDBCol>
                     <MDBCol>
                       <p class="bio">
@@ -174,40 +174,40 @@ function About() {
           </MDBContainer>
         </div>
 
-        <div class="main-container shadow">
+        <div class="main-container shadow" style={{ marginBottom: '20px' }}>
           <MDBContainer>
             <br />
             <br />
             <MDBRow>
               <MDBCol sm={12} md={4}>
-                <div class="container">
+                <div class="container" style={{ textAlign: 'center' }}>
                   <img
                     src={imgvishnu}
                     alt="Vishnu"
-                    style={{ width: "65%", borderRadius: "100%" }}
+                    style={{ width: "65%", borderRadius: "100%", border: '2px solid #FF4655' }}
                   />
                   <br />
-                  <Link className="Link" to="https://www.linkedin.com/in/sree-vishnu-v-910b69231/">
-                    <i className="fa fa-linkedin" />
+                  <Link className="Link" to="https://www.linkedin.com/in/sree-vishnu-v-910b69231/" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-linkedin" style={{ fontSize: '24px' }} />
                   </Link>
-                  <Link className="Link" to="https://github.com/Sreevishnu1924">
-                    <i className="fa fa-github" />
+                  <Link className="Link" to="https://github.com/Sreevishnu1924" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-github" style={{ fontSize: '24px' }} />
                   </Link>
                 </div>
               </MDBCol>
 
               <MDBCol>
                 <div class="container">
-                  <h2 className="h-about">Sri Vishnu</h2>
+                  <h2 className="h-about" style={{ color: '#FF4655' }}>Sri Vishnu</h2>
                   <p className="p-about">Vellore Institute of Technology Amaravati</p>
                 </div>
 
-                <hr />
+                <hr style={{ borderColor: '#FF4655' }} />
 
                 <MDBContainer>
                   <MDBRow>
                     <MDBCol sm={2} lg={2} md={2}>
-                      <h6 className="m-4">Bio </h6>
+                      <h6 className="m-4" style={{ color: '#FF4655' }}>Bio </h6>
                     </MDBCol>
                     <MDBCol>
                       <p class="bio">
@@ -223,40 +223,40 @@ function About() {
           </MDBContainer>
         </div>
 
-        <div class="main-container shadow">
+        <div class="main-container shadow" style={{ marginBottom: '20px' }}>
           <MDBContainer>
             <br />
             <br />
             <MDBRow>
               <MDBCol sm={12} md={4}>
-                <div class="container">
+                <div class="container" style={{ textAlign: 'center' }}>
                   <img
                     src={imgvarun}
                     alt="Varun"
-                    style={{ width: "65%", borderRadius: "100%" }}
+                    style={{ width: "65%", borderRadius: "100%", border: '2px solid #FF4655' }}
                   />
                   <br />
-                  <Link className="Link" to="https://www.linkedin.com/in/varun-venkatesh-2015b3219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                    <i className="fa fa-linkedin" />
+                  <Link className="Link" to="https://www.linkedin.com/in/varun-venkatesh-2015b3219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-linkedin" style={{ fontSize: '24px' }} />
                   </Link>
-                  <Link className="Link" to="https://github.com/varunvenkat22">
-                    <i className="fa fa-github" />
+                  <Link className="Link" to="https://github.com/varunvenkat22" style={{ color: '#fff', margin: '0 10px' }}>
+                    <i className="fa fa-github" style={{ fontSize: '24px' }} />
                   </Link>
                 </div>
               </MDBCol>
 
               <MDBCol>
                 <div class="container">
-                  <h2 className="h-about">Varun Venkatesh</h2>
+                  <h2 className="h-about" style={{ color: '#FF4655' }}>Varun Venkatesh</h2>
                   <p className="p-about">Vellore Institute of Technology Amaravati</p>
                 </div>
 
-                <hr />
+                <hr style={{ borderColor: '#FF4655' }} />
 
                 <MDBContainer>
                   <MDBRow>
                     <MDBCol sm={2} lg={2} md={2}>
-                      <h6 className="m-4">Bio </h6>
+                      <h6 className="m-4" style={{ color: '#FF4655' }}>Bio </h6>
                     </MDBCol>
                     <MDBCol>
                       <p class="bio">
