@@ -11,7 +11,7 @@ const MySwal = withReactContent(Swal);
 const ContactInfoContainer = styled.td`
   height: auto;
   position: relative;
-  background-color: #f9f9f9;
+  background-color: #fff; /* Changed to white */
   font-size: 1em;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,7 @@ const ContactInfoContainer = styled.td`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   width: 100%;
+  vertical-align: top; /* Added to align to the top */
 `;
 
 const Divider = styled.div`
