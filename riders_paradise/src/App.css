@@ -110,16 +110,3 @@
         transform: rotate(360deg);
     }
 }
-
-/* Vertically centered text styling */
-.centered-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px; /* Adjust the height as needed */
-    color: #FF5733; /* Changed text color to a vibrant orange */
-    font-size: 2em; /* Increased font size */
-    font-family: 'Arial', sans-serif; /* Changed font family */
-    font-weight: bold;
-    text-shadow: 2px 2px 4px #000000; /* Added a text shadow for better visibility */
-}
