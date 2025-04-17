@@ -137,7 +137,7 @@ const EditBikeForm = () => {
 
     axios
       .put(
-        `https://riders-paradise.onrender.com/admin/editbike/${selectedBikeId}`,
+        `http://localhost:4000/v2/bike/editbike/${selectedBikeId}`,
         bikeData
       )
       .then((result) => {
