@@ -3,22 +3,19 @@
   margin-right: 10%;
   margin-left: 10%;
   margin-bottom: 20%;
-  border-radius: 10px;
-  border: 2px solid #FF4655; /* Valorant Red */
+  border-radius: 20px;
+  border: 2px solid rgb(209, 225, 250);
   padding-bottom: 50px;
-  background-color: #0F1923; /* Dark Background */
-  color: #FFFFFF; /* White Text */
 }
 
 .links {
-  font-size: 16px;
-  color: #FF4655; /* Valorant Red */
+  font-size: 15px;
+  color: rgb(87, 154, 221);
 }
 
 .bio {
-  color: #A9A9A9; /* Grey */
-  font-size: 16px;
-  line-height: 1.6;
+  color: grey;
+  /* font-size: 18px; */
 }
 
 .fa {
@@ -27,62 +24,48 @@
 }
 
 .fa-linkedin {
-  color: #FFFFFF;
-  background-color: #0077B5; /* LinkedIn Color */
-  border-radius: 50%;
-  padding: 8px;
+  color: white;
+  background-color: rgb(39, 138, 204);
+  border-radius: 100%;
 }
 
 .container {
   text-align: center;
-  padding: 20px;
 }
 
 .main-container {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 50px;
   padding-top: 20px;
   margin-left: 8%;
   margin-right: 8%;
   margin-bottom: 2%;
-  border-radius: 10px;
-  background-color: #262A33; /* Darker Container */
-  color: #FFFFFF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: rgb(228, 227, 227);
 }
 
 .bottom-container {
-  margin: 20px auto;
-  padding: 20px;
+  margin: auto;
 }
 
 .first {
   width: 35%;
-  margin: 0 auto;
 }
 
 .container-fluid {
   margin-top: 2rem;
 }
 
-.p-about {
-  color: #FF4655; /* Valorant Red */
-  font-size: 18px;
+.p-about{
+  color: tomato;
 }
 
 .h-about {
-  color: #FFFFFF;
-  font-size: 24px;
-  margin-bottom: 15px;
+  color: rgb(70, 131, 192);
 }
 
 .Link {
   text-decoration: none;
   font-size: 22px;
-  color: #FFFFFF;
-  transition: color 0.3s ease;
-}
-
-.Link:hover {
-  color: #FF4655; /* Valorant Red */
+  color: black;
 }
