@@ -9,45 +9,57 @@ import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
 const ContactInfoContainer = styled.td`
-  height: 45vh;
+  height: auto;
   position: relative;
-  background-color: lightblue;
+  background-color: #f9f9f9;
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  top: 100px;
-  left: 50px;
+  top: 0;
+  left: 0;
   font-weight: w100;
   margin-bottom: 10px;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%;
 `;
 
 const Divider = styled.div`
   border-top: 1px solid #ccc;
   margin: 10px 0;
+  width: 80%;
 `;
 
 const ContactItem = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 15px;
+  width: 100%;
 `;
 
 const Icon = styled.img`
   vertical-align: start;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
 `;
 
 const Label = styled.span`
   font-weight: bold;
-  width: 80px;
+  width: 120px;
   margin-right: 5px;
+  text-align: left;
 `;
 
 const StyledLink = styled.a`
-  color: red;
+  color: #007bff;
   text-decoration: underline;
+  &:hover {
+    color: #0056b3;
+  }
 `;
 
 function Contact() {
@@ -87,9 +99,9 @@ function Contact() {
   };
 
   return (
-    <div class="body-cotactpage">
+    <div className="body-cotactpage">
       <h2 id="cus-contactpage">CONTACT US</h2>
-      <table>
+      <table style={{ width: '100%', borderSpacing: '20px' }}>
         {error && (
           <div className="error-message">
             <p>Error:</p>
@@ -97,107 +109,111 @@ function Contact() {
             <p>Message: {error.message}</p>
           </div>
         )}
-        <td id="first-contactpage">
-          <form onSubmit={handleSubmit}>
-            <div class="div-contactpage">Name</div>
-            <input
-              id="box1-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-            <div class="div-contactpage">Email</div>
-            <input
-              id="box2-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <div class="div-contactpage">Mobile</div>
-            <input
-              id="box3-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
-              value={phnno}
-              onChange={(e) => {
-                setPhoneNo(e.target.value);
-              }}
-            />
-            <div class="div-contactpage">comment</div>
-            <input
-              id="box4-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-              type="text"
-              value={comment}
-              onChange={(e) => {
-                setComment(e.target.value);
-              }}
-            />
-            <div class="div-contactpage">
-              <button type="submit">SUBMIT</button>
+        <tbody style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', width: '100%' }}>
+          <td id="first-contactpage" style={{ width: '45%' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div className="div-contactpage">Name</div>
+              <input
+                id="box1-contactpage"
+                className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+                type="text"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+              <div className="div-contactpage">Email</div>
+              <input
+                id="box2-contactpage"
+                className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+                type="text"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <div className="div-contactpage">Mobile</div>
+              <input
+                id="box3-contactpage"
+                className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+                type="text"
+                value={phnno}
+                onChange={(e) => {
+                  setPhoneNo(e.target.value);
+                }}
+              />
+              <div className="div-contactpage">Comment</div>
+              <input
+                id="box4-contactpage"
+                className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+                type="text"
+                value={comment}
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
+              />
+              <div className="div-contactpage">
+                <button type="submit">SUBMIT</button>
+              </div>
+            </form>
+          </td>
+          <td style={{ width: '45%' }}>
+            <div className="raised-container">
+              <ContactInfoContainer>
+                <Divider />
+
+                <ContactItem>
+                  <Icon src="images/pin.png" alt="" />
+                  <Label>Address:</Label>
+                  <StyledLink href="#" className="details-contactpage">
+                    Riders Paradise Chennai TamilNadu
+                  </StyledLink>
+                </ContactItem>
+
+                <ContactItem>
+                  <Icon src="images/call.png" alt="" />
+                  <Label>Phone:</Label>
+                  <StyledLink
+                    href="tel:+919717785190"
+                    className="details1-contactpage"
+                  >
+                    +91-1234567890
+                  </StyledLink>
+                </ContactItem>
+
+                <ContactItem>
+                  <Icon src="images/mail.png" alt="" />
+                  <Label>Email:</Label>
+                  <StyledLink
+                    href="mailto:admin@ridersparadise.com"
+                    className="details2-contactpage"
+                  >
+                    admin@ridersparadise.com
+                  </StyledLink>
+                </ContactItem>
+
+                <ContactItem>
+                  <Icon src="images/mail.png" alt="" />
+                  <Label>Nodal Officer:</Label>
+                  <StyledLink
+                    href="mailto:eshop.support@heromotocorp.com"
+                    className="details2-contactpage"
+                  >
+                    Varun Venkateshs
+                  </StyledLink>
+                </ContactItem>
+
+                <ContactItem>
+                  <Icon src="images/mail.png" alt="" />
+                  <Label>Grievance Officer:</Label>
+                  <StyledLink className="details2-contactpage">
+                    Manigandan
+                  </StyledLink>
+                </ContactItem>
+              </ContactInfoContainer>
             </div>
-          </form>
-        </td>
-        <div className="raised-container">
-          <ContactInfoContainer>
-            <Divider />
-
-            <ContactItem>
-              <Icon src="images/pin.png" alt="" />
-              <Label>Address:</Label>
-              <StyledLink href="#" className="details-contactpage">
-                Riders Paradise Chennai TamilNadu
-              </StyledLink>
-            </ContactItem>
-
-            <ContactItem>
-              <Icon src="images/call.png" alt="" />
-              <Label>Phone:</Label>
-              <StyledLink
-                href="tel:+919717785190"
-                className="details1-contactpage"
-              >
-                +91-1234567890
-              </StyledLink>
-            </ContactItem>
-
-            <ContactItem>
-              <Icon src="images/mail.png" alt="" />
-              <Label>Email:</Label>
-              <StyledLink
-                href="mailto:admin@ridersparadise.com"
-                className="details2-contactpage"
-              >
-                admin@ridersparadise.com
-              </StyledLink>
-            </ContactItem>
-
-            <ContactItem>
-              <Icon src="images/mail.png" alt="" />
-              <Label>Nodal Officer:</Label>
-              <StyledLink
-                href="mailto:eshop.support@heromotocorp.com"
-                className="details2-contactpage"
-              >
-                Varun Venkateshs
-              </StyledLink>
-            </ContactItem>
-
-            <ContactItem>
-              <Icon src="images/mail.png" alt="" />
-              <Label>Grievance Officer:</Label>
-              <StyledLink className="details2-contactpage">
-                Manigandan
-              </StyledLink>
-            </ContactItem>
-          </ContactInfoContainer>
-        </div>
+          </td>
+        </tbody>
       </table>
     </div>
   );
