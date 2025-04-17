@@ -70,6 +70,8 @@
 
 .bodydiv {
     min-height: 80vh;
+    padding-bottom: 15vh; /* Added padding to create space for the footer */
+    position: relative; /* Ensure relative positioning */
 }
 
 /* Loader */

@@ -99,7 +99,7 @@ function Contact() {
   };
 
   return (
-    <div className="body-cotactpage">
+    <div className="body-cotactpage" style={{ marginBottom: '100px' }}>
       <h2 id="cus-contactpage">CONTACT US</h2>
       <table style={{ width: '100%', borderSpacing: '20px' }}>
         {error && (
