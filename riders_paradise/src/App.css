@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 .page {
-
     margin: 0;
     background-color: transparent;
 }
-
 
 .nav-items {
     display: flex;
@@ -13,7 +11,6 @@
     align-items: center;
     background-color: transparent;
     margin-right: 20px;
-
 }
 
 .nav-items a {
