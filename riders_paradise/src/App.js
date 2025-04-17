@@ -74,7 +74,8 @@ function App() {
               <Route path="/user/payment" element={<Payment />} />
               <Route
                 path="/user/explore/bikes/:_id"
-                element={<BikeDetailsPage />} />
+                element={<BikeDetailsPage />}
+              />
 
               <Route path="/admin" element={<Admin />} />
             </Route>
@@ -108,7 +109,7 @@ function LandingPage() {
             <Html fullscreen>
               <div className="overlay-content">
                 <h3 className="heading3">THE POWER OF OPPOSITES</h3>
-                <h1 className="main-title">DUCATI XDIAVEL S</h1>
+                <h1>DUCATI XDIAVEL S</h1>
                 <div className="buttons-in">
                   <button
                     className="button-app"
