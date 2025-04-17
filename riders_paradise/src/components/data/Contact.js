@@ -11,7 +11,7 @@ const MySwal = withReactContent(Swal);
 const ContactInfoContainer = styled.td`
   height: auto;
   position: relative;
-  background-color: #fff; /* Changed to white */
+  background-color: #f9f9f9; /* Changed to light gray */
   font-size: 1em;
   display: flex;
   flex-direction: column;
@@ -53,6 +53,7 @@ const Label = styled.span`
   width: 120px;
   margin-right: 5px;
   text-align: left;
+  color: #333; /* Changed label color to dark gray */
 `;
 
 const StyledLink = styled.a`
@@ -63,19 +64,76 @@ const StyledLink = styled.a`
   }
 `;
 
+const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const InputField = styled.input`
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+`;
+
+const TextAreaField = styled.textarea`
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+  min-height: 100px;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+`;
+
+const SubmitButton = styled.button`
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const SectionTitle = styled.div`
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+`;
+
 function Contact() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phnno, setPhoneNo] = useState();
-  const [comment, setComment] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phnno, setPhoneNo] = useState('');
+  const [comment, setComment] = useState('');
   const [error, setError] = useState();
 
   const showAlert = ({ result }) => {
     MySwal.fire({
-      title: "Submitted Succesfully",
+      title: 'Submitted Succesfully',
       text: { result },
-      icon: "success",
-      confirmButtonText: "OK",
+      icon: 'success',
+      confirmButtonText: 'OK',
     });
   };
 
@@ -83,14 +141,14 @@ function Contact() {
     e.preventDefault();
     try {
       axios
-        .post("https://riders-paradise.onrender.com/user/contact", {
+        .post('https://riders-paradise.onrender.com/user/contact', {
           name: name,
           email: email,
           phnno: phnno,
           comment: comment,
         })
         .then((result) => {
-          if (result.data.status === "Success") {
+          if (result.data.status === 'Success') {
             showAlert(result.data.message);
           }
         });
@@ -101,7 +159,7 @@ function Contact() {
 
   return (
     <div className="body-cotactpage" style={{ marginBottom: '100px' }}>
-      <h2 id="cus-contactpage">CONTACT US</h2>
+      <SectionTitle id="cus-contactpage">CONTACT US</SectionTitle>
       <table style={{ width: '100%', borderSpacing: '20px' }}>
         {error && (
           <div className="error-message">
@@ -112,9 +170,9 @@ function Contact() {
         )}
         <tbody style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start', width: '100%' }}>
           <td id="first-contactpage" style={{ width: '45%' }}>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+            <FormContainer onSubmit={handleSubmit}>
               <div className="div-contactpage">Name</div>
-              <input
+              <InputField
                 id="box1-contactpage"
                 className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
                 type="text"
@@ -124,7 +182,7 @@ function Contact() {
                 }}
               />
               <div className="div-contactpage">Email</div>
-              <input
+              <InputField
                 id="box2-contactpage"
                 className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
                 type="text"
@@ -134,7 +192,7 @@ function Contact() {
                 }}
               />
               <div className="div-contactpage">Mobile</div>
-              <input
+              <InputField
                 id="box3-contactpage"
                 className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
                 type="text"
@@ -144,7 +202,7 @@ function Contact() {
                 }}
               />
               <div className="div-contactpage">Comment</div>
-              <input
+              <TextAreaField
                 id="box4-contactpage"
                 className="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
                 type="text"
@@ -154,9 +212,9 @@ function Contact() {
                 }}
               />
               <div className="div-contactpage">
-                <button type="submit">SUBMIT</button>
+                <SubmitButton type="submit">SUBMIT</SubmitButton>
               </div>
-            </form>
+            </FormContainer>
           </td>
           <td style={{ width: '45%' }}>
             <div className="raised-container">
