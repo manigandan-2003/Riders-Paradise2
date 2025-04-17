@@ -3,69 +3,124 @@
   margin-right: 10%;
   margin-left: 10%;
   margin-bottom: 20%;
-  border-radius: 20px;
-  border: 2px solid rgb(209, 225, 250);
+  border-radius: 10px;
+  border: 2px solid #dc3545; /* Valorant red */
+  background-color: #1e1e1e; /* Dark background */
+  color: #fff; /* White text */
   padding-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
 }
 
 .links {
-  font-size: 15px;
-  color: rgb(87, 154, 221);
+  font-size: 16px;
+  color: #ff4655; /* Valorant accent color */
+  text-decoration: none; /* Remove underlines */
 }
 
 .bio {
-  color: grey;
-  /* font-size: 18px; */
+  color: #d0d0d0; /* Light gray for readability */
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .fa {
-  margin-right: 10%;
-  margin-top: 10%;
+  margin-right: 5%;
+  margin-top: 5%;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.fa:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
 .fa-linkedin {
-  color: white;
-  background-color: rgb(39, 138, 204);
-  border-radius: 100%;
+  color: #fff;
+  background-color: #0077b5; /* LinkedIn color */
+  border-radius: 50%;
+  padding: 8px;
 }
 
 .container {
   text-align: center;
+  padding: 20px;
 }
 
 .main-container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-top: 20px;
   margin-left: 8%;
   margin-right: 8%;
   margin-bottom: 2%;
-  border-radius: 20px;
-  background-color: rgb(228, 227, 227);
+  border-radius: 10px;
+  background-color: #2c2c2c; /* Darker container background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .bottom-container {
-  margin: auto;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .first {
   width: 35%;
+  margin: 0 auto;
 }
 
 .container-fluid {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  padding: 0 15px;
 }
 
-.p-about{
-  color: tomato;
+.p-about {
+  color: #f03a47; /* Valorant-like color */
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .h-about {
-  color: rgb(70, 131, 192);
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .Link {
   text-decoration: none;
-  font-size: 22px;
-  color: black;
+  font-size: 1.3rem;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.Link:hover {
+  color: #ff4655;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-about {
+    margin: 2% 5%;
+    padding-bottom: 30px;
+  }
+
+  .main-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .first {
+    width: 80%;
+  }
+
+  .links {
+    font-size: 1.1rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
 }
