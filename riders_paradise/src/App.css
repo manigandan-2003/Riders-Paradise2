@@ -110,3 +110,19 @@
         transform: rotate(360deg);
     }
 }
+
+/* Centering and styling the raised-container */
+.raised-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width */
+}

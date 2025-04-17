@@ -107,7 +107,7 @@ function LandingPage() {
           <Canvas shadows>
             <BikeShow />
             <Html fullscreen>
-              <div className="overlay-content">
+              <div className="raised-container">
                 <h3 className="heading3">THE POWER OF OPPOSITES</h3>
                 <h1>DUCATI XDIAVEL S</h1>
                 <div className="buttons-in">
