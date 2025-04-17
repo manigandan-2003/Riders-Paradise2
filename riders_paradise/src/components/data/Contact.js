@@ -5,6 +5,7 @@ import styled from "styled-components";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import styles from "./Contact.module.css";
 
 const MySwal = withReactContent(Swal);
 
@@ -87,9 +88,9 @@ function Contact() {
   };
 
   return (
-    <div class="body-cotactpage">
-      <h2 id="cus-contactpage">CONTACT US</h2>
-      <table>
+    <div className={styles.bodyCotactpage}>
+      <h2 id="cus-contactpage" className={styles.contactTitle}>CONTACT US</h2>
+      <table className={styles.contactTable}>
         {error && (
           <div className="error-message">
             <p>Error:</p>
@@ -97,54 +98,54 @@ function Contact() {
             <p>Message: {error.message}</p>
           </div>
         )}
-        <td id="first-contactpage">
+        <td id="first-contactpage" className={styles.contactForm}>
           <form onSubmit={handleSubmit}>
-            <div class="div-contactpage">Name</div>
+            <div className={styles.formDiv}>Name</div>
             <input
               id="box1-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              className={`w3-input-contactpage w3-border-contactpage w3-round-large-contactpage ${styles.formInput}`}
               type="text"
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
             />
-            <div class="div-contactpage">Email</div>
+            <div className={styles.formDiv}>Email</div>
             <input
               id="box2-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              className={`w3-input-contactpage w3-border-contactpage w3-round-large-contactpage ${styles.formInput}`}
               type="text"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
             />
-            <div class="div-contactpage">Mobile</div>
+            <div className={styles.formDiv}>Mobile</div>
             <input
               id="box3-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              className={`w3-input-contactpage w3-border-contactpage w3-round-large-contactpage ${styles.formInput}`}
               type="text"
               value={phnno}
               onChange={(e) => {
                 setPhoneNo(e.target.value);
               }}
             />
-            <div class="div-contactpage">comment</div>
+            <div className={styles.formDiv}>comment</div>
             <input
               id="box4-contactpage"
-              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              className={`w3-input-contactpage w3-border-contactpage w3-round-large-contactpage ${styles.formInput}`}
               type="text"
               value={comment}
               onChange={(e) => {
                 setComment(e.target.value);
               }}
             />
-            <div class="div-contactpage">
-              <button type="submit">SUBMIT</button>
+            <div className={styles.submitButtonDiv}>
+              <button type="submit" className={styles.submitButton}>SUBMIT</button>
             </div>
           </form>
         </td>
-        <div className="raised-container">
+        <div className={styles.raisedContainer}>
           <ContactInfoContainer>
             <Divider />
 
