@@ -32,7 +32,6 @@ function Login() {
           if (result.data.role === "admin") {
             dispatch(loginState(user));
             navigate("/admin");
-            console.log();
             dispatch(loginSuccess());
           } else {
             dispatch(loginState(user));
