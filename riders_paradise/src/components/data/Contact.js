@@ -168,8 +168,7 @@ function Contact() {
     e.preventDefault();
     try {
       axios
-        .post('https://riders-paradise.onrender.com/user/contact', {
-          name: name,
+        .post('http://localhost:4000/v2/user/contact', {\n          name: name,
           email: email,
           phnno: phnno,
           comment: comment,

@@ -14,7 +14,7 @@ function Gridview() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/v2/bikes"
         );
         setBikes(response.data);
         setFilteredBikes(response.data);
