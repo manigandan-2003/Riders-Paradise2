@@ -1,72 +1,82 @@
 .maincontent {
     position: relative;
-    top: 20%;
-    height: fit-content;
+    top: 10%;
     min-height: 80vh;
     background-image: url("../assets/4919.jpg");
     background-size: cover;
     color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    text-align: center;
+}
+
+.maincontent h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .label-testride {
     padding-right: 15px;
+    color: #eee;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.input-testride {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.input-testride[type="submit"],
+.input-testride[type="reset"] {
+    font-weight: 600;
+    width: auto;
+    padding: 12px 60px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 15px auto;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
 }
 
 .input-testride[type="submit"] {
-    font-weight: 600;
-    width: auto;
-    padding: 10px 50px 10px 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 150px;
-    background-color: greenyellow;
+    background-color: #5cb85c;
     color: #fff;
 }
 
 .input-testride[type="submit"]:hover {
-    font-weight: 600;
-    width: auto;
-    padding: 10px 50px 10px 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 150px;
-    background-color: black;
+    background-color: #449d44;
 }
 
 .input-testride[type="reset"] {
-    font-weight: 600;
-    width: auto;
-    padding: 10px 50px 10px 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 150px;
-    background-color: red;
+    background-color: #d9534f;
     color: #fff;
 }
 
 .input-testride[type="reset"]:hover {
-    font-weight: 600;
-    width: auto;
-    padding: 10px 50px 10px 50px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 150px;
-    background-color: black;
+    background-color: #c9302c;
 }
 
 .tr-testride {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .td-testride,
 .submitbtn,
 .resetbtn {
-    padding: 20px;
+    padding: 15px;
 }
 
 .city,
@@ -94,62 +104,82 @@
     padding-right: 116px;
 }
 
-.input-testride {
-    padding-left: 5px;
-    padding-right: 55px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
 .textarea-testride {
-    padding-right: 11px;
-    padding-left: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin: 5px 0;
+    font-size: 1em;
 }
 
 .span-testride {
-    color: red;
+    color: #f00;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .tickboxlabel {
-    padding: 0;
-    margin-left: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    color: #ddd;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .tickbox {
-    color: red;
-    padding-right: 15px;
+    margin-right: 5px;
 }
 
 .tr-terms-box {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.col1-testride{
-    display: flex;
-    float: left;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 300px;
-}
-
-.col2-testride{
-    display: flex;
-    float: right;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 100px;
-}
-
-.row-testride{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
-
-.btn-testride{
+.col1-testride,
+.col2-testride {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    padding: 10px;
+}
+
+.row-testride {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn-testride {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .row-testride {
+        flex-direction: row;
+    }
+
+    .col1-testride,
+    .col2-testride {
+        width: 50%;
+        padding: 20px;
+    }
+
+    .btn-testride {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 992px) {
+    .maincontent {
+        top: 15%;
+        margin: 30px auto;
+        max-width: 960px;
+    }
 }

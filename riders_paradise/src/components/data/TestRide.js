@@ -89,7 +89,7 @@ function TestRide() {
   };
 
   return (
-    <div className="maincontent">
+    <div className="test-ride-container">
       {error && (
         <div className="error-message">
           <p>Error:</p>
@@ -97,35 +97,33 @@ function TestRide() {
           <p>Message: {error.message}</p>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
-        <div className="col1-testride">
-          <div className="td-testride">
-            <label className="label-testride" for="model">
-              Model interested in<span className="span-testride">*</span>
+      <form className="test-ride-form" onSubmit={handleSubmit}>
+        <div className="form-column">
+          <div className="form-group">
+            <label className="form-label" htmlFor="model">
+              Model interested in<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="model"
+              className="form-select"
+              id="model"
               value={selectedModel}
               onChange={(e) => setSelectedModel(e.target.value)}
             >
               <option value="">Select Model</option>
-              {bikes.map((bikes) => (
-                <option key={bikes.id} value={bikes.id}>
-                  {bikes.model}
+              {bikes.map((bike) => (
+                <option key={bike.id} value={bike.id}>
+                  {bike.model}
                 </option>
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="city">
-              City<span className="span-testride">*</span>
+          <div className="form-group">
+            <label className="form-label" htmlFor="city">
+              City<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="city"
+              className="form-select"
+              id="city"
               value={city}
               onChange={(e) => setCity(e.target.value)}
             >
@@ -137,46 +135,41 @@ function TestRide() {
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="name">
-              Your Name<span className="span-testride">*</span>
+          <div className="form-group">
+            <label className="form-label" htmlFor="name">
+              Your Name<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
+              className="form-input"
               type="text"
-              placeholder="Your Name"
               id="name"
+              placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="phno">
-              Mobile<span className="span-testride">*</span>
+          <div className="form-group">
+            <label className="form-label" htmlFor="phno">
+              Mobile<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
+              className="form-input"
               type="number"
               id="phno"
+              placeholder="Your Mobile"
               value={phno}
               onChange={(e) => setPhno(e.target.value)}
-              placeholder="Your Mobile"
             />
           </div>
         </div>
-        <div className="col2-testride">
-          <div className="td-testride">
-            <label className="label-testride" for="state">
-              State<span className="span-testride">*</span>
+        <div className="form-column">
+          <div className="form-group">
+            <label className="form-label" htmlFor="state">
+              State<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="state"
+              className="form-select"
+              id="state"
               value={state}
               onChange={(e) => setState(e.target.value)}
             >
@@ -223,14 +216,13 @@ function TestRide() {
               <option value="West Bengal">West Bengal</option>
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="dealer">
-              Dealer<span className="span-testride">*</span>
+          <div className="form-group">
+            <label className="form-label" htmlFor="dealer">
+              Dealer<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="dealer"
+              className="form-select"
+              id="dealer"
               value={dealer}
               onChange={(e) => setDealer(e.target.value)}
             >
@@ -242,62 +234,51 @@ function TestRide() {
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="email">
-              Email ID<span className="span-testride">*</span>
+          <div className="form-group">
+            <label className="form-label" htmlFor="email">
+              Email ID<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
+              className="form-input"
               type="email"
-              placeholder="Your Email"
               id="email"
+              placeholder="Your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="td-testride">
-            <label className="label-testride">Remarks/Suggestions</label>
-          </div>
-          <div className="td-testride">
+          <div className="form-group">
+            <label className="form-label" htmlFor="remarks">
+              Remarks/Suggestions
+            </label>
             <textarea
-              className="textarea-testride"
+              className="form-textarea"
+              id="remarks"
               placeholder="Remarks/Suggestions"
-              cols="30"
               value={remarks}
               onChange={(e) => setRemarks(e.target.value)}
-              rows="3"
-            ></textarea>
+            />
           </div>
         </div>
 
-        <div className="btn-testride">
-          <div className="tr-terms-box">
-            <div className="td-terms">
-              <input
-                className="tickboxlabel"
-                checked={agreement}
-                onChange={(e) => setAgreement(e.target.checked)}
-                type="checkbox"
-              />
-            </div>
-            <div className="td-terms">
-              <label className="tickbox">
-                {" "}
-                I agree to the terms and conditions
-              </label>
-            </div>
+        <div className="form-group">
+          <div className="terms-container">
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              id="agreement"
+              checked={agreement}
+              onChange={(e) => setAgreement(e.target.checked)}
+            />
+            <label className="form-label terms-label" htmlFor="agreement">
+              I agree to the terms and conditions
+            </label>
           </div>
-          <div className="td-testride">
-            <div className="td-testride"></div>
-            <div className="td-testride">
-              <input className="input-testride" type="submit" value="Submit" />
-            </div>
-            <div className="td-testride">
-              <input className="input-testride" type="reset" value="Reset" />
-            </div>
-          </div>
+        </div>
+
+        <div className="form-buttons">
+          <button className="submit-button" type="submit">Submit</button>
+          <button className="reset-button" type="reset">Reset</button>
         </div>
       </form>
     </div>
