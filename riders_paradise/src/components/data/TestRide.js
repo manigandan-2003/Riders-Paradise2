@@ -89,7 +89,7 @@ function TestRide() {
   };
 
   return (
-    <div className="maincontent">
+    <div className="test-ride-container">
       {error && (
         <div className="error-message">
           <p>Error:</p>
@@ -97,37 +97,38 @@ function TestRide() {
           <p>Message: {error.message}</p>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
-        <div className="col1-testride">
-          <div className="td-testride">
-            <label className="label-testride" for="model">
-              Model interested in<span className="span-testride">*</span>
+      <form className="test-ride-form" onSubmit={handleSubmit}>
+        <div className="form-column">
+          <div className="form-group">
+            <label htmlFor="model" className="form-label">
+              Model interested in<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="model"
+              id="model"
+              className="form-select"
               value={selectedModel}
               onChange={(e) => setSelectedModel(e.target.value)}
+              required
             >
               <option value="">Select Model</option>
-              {bikes.map((bikes) => (
-                <option key={bikes.id} value={bikes.id}>
-                  {bikes.model}
+              {bikes.map((bike) => (
+                <option key={bike.id} value={bike.model}>
+                  {bike.model}
                 </option>
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="city">
-              City<span className="span-testride">*</span>
+
+          <div className="form-group">
+            <label htmlFor="city" className="form-label">
+              City<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="city"
+              id="city"
+              className="form-select"
               value={city}
               onChange={(e) => setCity(e.target.value)}
+              required
             >
               <option value="">Select City</option>
               {cities.map((city, index) => (
@@ -137,48 +138,49 @@ function TestRide() {
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="name">
-              Your Name<span className="span-testride">*</span>
+
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">
+              Your Name<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
               type="text"
-              placeholder="Your Name"
               id="name"
+              className="form-input"
+              placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="phno">
-              Mobile<span className="span-testride">*</span>
+
+          <div className="form-group">
+            <label htmlFor="phno" className="form-label">
+              Mobile<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
               type="number"
               id="phno"
+              className="form-input"
+              placeholder="Your Mobile"
               value={phno}
               onChange={(e) => setPhno(e.target.value)}
-              placeholder="Your Mobile"
+              required
             />
           </div>
         </div>
-        <div className="col2-testride">
-          <div className="td-testride">
-            <label className="label-testride" for="state">
-              State<span className="span-testride">*</span>
+
+        <div className="form-column">
+          <div className="form-group">
+            <label htmlFor="state" className="form-label">
+              State<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="state"
+              id="state"
+              className="form-select"
               value={state}
               onChange={(e) => setState(e.target.value)}
+              required
             >
               <option value="">Select State</option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -223,16 +225,17 @@ function TestRide() {
               <option value="West Bengal">West Bengal</option>
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="dealer">
-              Dealer<span className="span-testride">*</span>
+
+          <div className="form-group">
+            <label htmlFor="dealer" className="form-label">
+              Dealer<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <select
-              className="dealer"
+              id="dealer"
+              className="form-select"
               value={dealer}
               onChange={(e) => setDealer(e.target.value)}
+              required
             >
               <option value="">Select Dealer</option>
               {dealers.map((dealer, index) => (
@@ -242,62 +245,59 @@ function TestRide() {
               ))}
             </select>
           </div>
-          <div className="td-testride">
-            <label className="label-testride" for="email">
-              Email ID<span className="span-testride">*</span>
+
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
+              Email ID<span className="required">*</span>
             </label>
-          </div>
-          <div className="td-testride">
             <input
-              className="input-testride"
               type="email"
-              placeholder="Your Email"
               id="email"
+              className="form-input"
+              placeholder="Your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
-          <div className="td-testride">
-            <label className="label-testride">Remarks/Suggestions</label>
-          </div>
-          <div className="td-testride">
+
+          <div className="form-group">
+            <label htmlFor="remarks" className="form-label">
+              Remarks/Suggestions
+            </label>
             <textarea
-              className="textarea-testride"
+              id="remarks"
+              className="form-textarea"
               placeholder="Remarks/Suggestions"
-              cols="30"
               value={remarks}
               onChange={(e) => setRemarks(e.target.value)}
-              rows="3"
             ></textarea>
           </div>
         </div>
 
-        <div className="btn-testride">
-          <div className="tr-terms-box">
-            <div className="td-terms">
-              <input
-                className="tickboxlabel"
-                checked={agreement}
-                onChange={(e) => setAgreement(e.target.checked)}
-                type="checkbox"
-              />
-            </div>
-            <div className="td-terms">
-              <label className="tickbox">
-                {" "}
-                I agree to the terms and conditions
-              </label>
-            </div>
+        <div className="form-group">
+          <div className="terms-container">
+            <input
+              type="checkbox"
+              id="agreement"
+              className="form-checkbox"
+              checked={agreement}
+              onChange={(e) => setAgreement(e.target.checked)}
+              required
+            />
+            <label htmlFor="agreement" className="form-label terms-label">
+              I agree to the terms and conditions
+            </label>
           </div>
-          <div className="td-testride">
-            <div className="td-testride"></div>
-            <div className="td-testride">
-              <input className="input-testride" type="submit" value="Submit" />
-            </div>
-            <div className="td-testride">
-              <input className="input-testride" type="reset" value="Reset" />
-            </div>
-          </div>
+        </div>
+
+        <div className="form-buttons">
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+          <button type="reset" className="reset-button">
+            Reset
+          </button>
         </div>
       </form>
     </div>
