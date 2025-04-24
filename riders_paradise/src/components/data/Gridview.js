@@ -14,7 +14,7 @@ function Gridview() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/v2/bikes"
+          "http://localhost:4000/v2/bike/bikes"
         );
         setBikes(response.data);
         setFilteredBikes(response.data);

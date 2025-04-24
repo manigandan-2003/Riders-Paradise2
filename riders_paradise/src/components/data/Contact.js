@@ -168,7 +168,8 @@ function Contact() {
     e.preventDefault();
     try {
       axios
-        .post('http://localhost:4000/v2/user/contact', {\n          name: name,
+        .post('http://localhost:4000/v2/user/contact', {         
+          name: name,
           email: email,
           phnno: phnno,
           comment: comment,
