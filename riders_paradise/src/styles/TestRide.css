@@ -8,11 +8,11 @@
     color: #fff;
 }
 
-.label-testride {
+.label_testride {
     padding-right: 15px;
 }
 
-.input-testride[type="submit"] {
+.input_testride[type="submit"] {
     font-weight: 600;
     width: auto;
     padding: 10px 50px 10px 50px;
@@ -24,7 +24,7 @@
     color: #fff;
 }
 
-.input-testride[type="submit"]:hover {
+.input_testride[type="submit"]:hover {
     font-weight: 600;
     width: auto;
     padding: 10px 50px 10px 50px;
@@ -35,7 +35,7 @@
     background-color: black;
 }
 
-.input-testride[type="reset"] {
+.input_testride[type="reset"] {
     font-weight: 600;
     width: auto;
     padding: 10px 50px 10px 50px;
@@ -47,7 +47,7 @@
     color: #fff;
 }
 
-.input-testride[type="reset"]:hover {
+.input_testride[type="reset"]:hover {
     font-weight: 600;
     width: auto;
     padding: 10px 50px 10px 50px;
@@ -58,12 +58,12 @@
     background-color: black;
 }
 
-.tr-testride {
+.tr_testride {
     text-align: center;
     padding: 20px;
 }
 
-.td-testride,
+.td_testride,
 .submitbtn,
 .resetbtn {
     padding: 20px;
@@ -94,19 +94,19 @@
     padding-right: 116px;
 }
 
-.input-testride {
+.input_testride {
     padding-left: 5px;
     padding-right: 55px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-.textarea-testride {
+.textarea_testride {
     padding-right: 11px;
     padding-left: 5px;
 }
 
-.span-testride {
+.span_testride {
     color: red;
 }
 
@@ -120,13 +120,13 @@
     padding-right: 15px;
 }
 
-.tr-terms-box {
+.tr_terms_box {
     display: flex;
     align-items: center;
     flex-direction: row;
 }
 
-.col1-testride{
+.col1_testride{
     display: flex;
     float: left;
     flex-direction: column;
@@ -134,7 +134,7 @@
     padding-left: 300px;
 }
 
-.col2-testride{
+.col2_testride{
     display: flex;
     float: right;
     flex-direction: column;
@@ -142,13 +142,13 @@
     padding-left: 100px;
 }
 
-.row-testride{
+.row_testride{
     display: flex;
     flex-direction: row;
     position: relative;
 }
 
-.btn-testride{
+.btn_testride{
     display: flex;
     flex-direction: column;
     width: 50%;
