@@ -55,7 +55,7 @@ const EditBikeForm = () => {
     const fetchAllBikes = async () => {
       try {
         const response = await axios.get(
-          "https://riders-paradise.onrender.com/explore/bikes"
+          "http://localhost:4000/explore/bikes"
         );
         setAllBikes(response.data);
       } catch (error) {
@@ -69,7 +69,7 @@ const EditBikeForm = () => {
   const handleModelChange = async (selectedModel) => {
     try {
       const response = await axios.get(
-        `https://riders-paradise.onrender.com/api/bike/${selectedModel}`
+        `http://localhost:4000/api/bike/${selectedModel}`
       );
       const selectedBike = response.data;
 
@@ -137,7 +137,7 @@ const EditBikeForm = () => {
 
     axios
       .put(
-        `https://riders-paradise.onrender.com/admin/editbike/${selectedBikeId}`,
+        `http://localhost:4000/admin/editbike/${selectedBikeId}`,
         bikeData
       )
       .then((result) => {
