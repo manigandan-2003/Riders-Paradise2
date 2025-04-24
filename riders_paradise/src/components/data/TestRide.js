@@ -168,7 +168,6 @@ function TestRide() {
             />
           </div>
         </div>
-
         <div className="col2-testride">
           <div className="td-testride">
             <label className="label-testride" for="state">
