@@ -12,13 +12,11 @@
 }
 
 .bike-description {
-  border-style: dashed;
-  position: relative;
-  top: -350px;
-  left: 10px;
   width: 50vw;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .desc {
@@ -27,13 +25,9 @@
 
 .buttons-det {
   text-align: center;
-  /* Align buttons to the right */
 }
 
 .button-det {
-  position: relative;
-  top: 0px;
-  right: 70px;
   padding: 10px 20px;
   background-color: rgb(255, 255, 255);
   color: #c22222;
@@ -42,41 +36,25 @@
   cursor: pointer;
   border-radius: 5px;
   font-size: 25px;
-}
-
-.buttons-det button {
-  margin-right: 50px;
+  margin: 0 10px;
 }
 
 .bike-details {
   background-color: rgba(0, 0, 0, 0.6);
-  border-style: solid;
-  position: relative;
-  top: 10px;
-  left: 750px;
-  height: 700px;
   width: 650px;
   margin-top: 10px;
-  /* text-align: center; */
-  /* align-content: center; */
-  /* align-items: center; */
-  /* align-self: center; */
-  /* text-align: center; */
-  border-style: dotted;
+  padding: 20px;
 }
 
 .bike-details table {
   border-collapse: collapse;
   width: 100%;
-  border: none;
-  /* Remove table border */
 }
 
 .bike-details table th,
 .bike-details table td {
   padding: 6px;
   border: none;
-  /* Remove table cell borders */
 }
 
 .bike-details table th {
@@ -89,14 +67,10 @@
 }
 
 .bike-header {
-  font-weight: bold;
-  position: relative;
-  top: -700px;
-  left: 50px;
   font-size: 40px;
   text-align: center;
-  margin-top: 0;
-  width: 1500px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .bikeimages {
@@ -136,6 +110,7 @@
 
 .bike-carousel {
   position: relative;
-  left: 150px;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
