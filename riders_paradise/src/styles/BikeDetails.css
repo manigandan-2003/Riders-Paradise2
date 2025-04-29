@@ -13,14 +13,14 @@
 
 .bike-description {
   position: relative;
-  top: 20px;
+  /*top: 20px; Removed to prevent overlap*/
   left: 10px;
   width: 95vw;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
   padding: 20px;
-  margin: 20px auto;
-  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+  margin: 30px auto; /* Increased margin for better spacing */
+  box-sizing: border-box; 
 }
 
 .desc {
@@ -50,12 +50,12 @@
 .bike-details {
   background-color: rgba(0, 0, 0, 0.6);
   position: relative;
-  top: 20px;
+  /*top: 20px; Removed to prevent overlap*/
   left: 0;
   width: 95vw;
-  margin: 20px auto;
+  margin: 30px auto; /* Increased margin for better spacing */
   padding: 20px;
-  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+  box-sizing: border-box; 
 }
 
 .bike-details table {
@@ -135,7 +135,7 @@
   .bike-description,
   .bike-details {
     width: 95%;
-    margin: 10px auto;
+    margin: 20px auto;
     left: auto;
     right: auto;
   }
