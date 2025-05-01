@@ -4,16 +4,6 @@ import classNames from "classnames";
 import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import {
-  Input,
-  Label,
-  Button,
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@shadcn/ui";
 
 const MySwal = withReactContent(Swal);
 
@@ -133,110 +123,165 @@ const Registration = () => {
             <div className="details personal-r">
               <div className="fields-r">
                 <div className="input-field-r">
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" type="text" value={userName} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" />
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    value={userName}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Enter your name"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="dob">Date of birth</Label>
-                  <Input id="dob" type="date" value={dateofBirth} onChange={(e) => setdateofBirth(e.target.value)} placeholder="Enter your DOB" />
+                  <label>Date of birth</label>
+                  <input
+                    type="date"
+                    value={dateofBirth}
+                    onChange={(e) => setdateofBirth(e.target.value)}
+                    placeholder="Enter your DOB"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your Emailid" />
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your Emailid"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="model">Selected Model</Label>
-                  <Select value={selectedModel} onValueChange={setSelectedModel}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Model" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {bikes.map((bike) => (
-                        <SelectItem key={bike.id} value={bike.id}>
-                          {bike.model}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <label>Selected Model</label>
+                  <select
+                    className="model"
+                    value={selectedModel}
+                    onChange={(e) => setSelectedModel(e.target.value)}
+                  >
+                    <option value="">Select Model</option>
+                    {bikes.map((bikes) => (
+                      <option key={bikes.id} value={bikes.id}>
+                        {bikes.model}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="dealer">Selected Dealer</Label>
-                  <Select value={dealer} onValueChange={setDealer}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Dealer" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {dealers.map((dealer, index) => (
-                        <SelectItem key={index} value={dealer}>
-                          {dealer}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <label>Selected Dealer</label>
+                  <select
+                    className="dealer"
+                    value={dealer}
+                    onChange={(e) => setDealer(e.target.value)}
+                  >
+                    <option value="">Select Dealer</option>
+                    {dealers.map((dealer, index) => (
+                      <option key={index} value={dealer}>
+                        {dealer}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="mobile">Mobile Number</Label>
-                  <Input id="mobile" type="text" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} placeholder="Enter mobile Number" />
+                  <label>Mobile Number</label>
+                  <input
+                    type="text"
+                    value={mobileNumber}
+                    onChange={(e) => setMobileNumber(e.target.value)}
+                    placeholder="Enter mobile Number"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="address">Address</Label>
-                  <Input id="address" type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Enter mobile Number" />
+                  <label>Address</label>
+                  <input
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    placeholder="Enter mobile Number"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="country">Country</Label>
-                  <Input id="country" type="text" value={country} onChange={(e) => setCountry(e.target.value)} placeholder="Enter mobile Number" />
+                  <label>Country</label>
+                  <input
+                    type="text"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
+                    placeholder="Enter mobile Number"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="state">State</Label>
-                  <Input id="state" type="text" value={state} onChange={(e) => setState(e.target.value)} placeholder="Enter mobile Number" />
+                  <label>State</label>
+                  <input
+                    type="text"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                    placeholder="Enter mobile Number"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="pincode">PinCode</Label>
-                  <Input id="pincode" type="text" value={pincode} onChange={(e) => setPincode(e.target.value)} placeholder="Enter Pincode" />
+                  <label>PinCode</label>
+                  <input
+                    type="text"
+                    value={pincode}
+                    onChange={(e) => setPincode(e.target.value)}
+                    placeholder="Enter Pincode"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="city">City</Label>
-                  <Select value={city} onValueChange={setCity}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select City" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {cities.map((city, index) => (
-                        <SelectItem key={index} value={city}>
-                          {city}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <label>City</label>
+                  <select
+                    className="city"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                  >
+                    <option value="">Select City</option>
+                    {cities.map((city, index) => (
+                      <option key={index} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="ownership">Ownership type</Label>
-                  <Input id="ownership" type="text" value={ownershipStatus} onChange={(e) => setOwnershipStatus(e.target.value)} placeholder="Ownership status" />
+                  <label>Ownership type</label>
+                  <input
+                    type="text"
+                    value={ownershipStatus}
+                    onChange={(e) => setOwnershipStatus(e.target.value)}
+                    placeholder="Ownership status"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="finance">Finance</Label>
-                  <Input id="finance" type="text" value={financeRequired} onChange={(e) => setFinanceRequired(e.target.value)} placeholder="Enter if finance req" />
+                  <label>Finance</label>
+                  <input
+                    type="text"
+                    value={financeRequired}
+                    onChange={(e) => setFinanceRequired(e.target.value)}
+                    placeholder="Enter if finance req"
+                  />
                 </div>
                 <div className="input-field-r">
-                  <Label htmlFor="payment">Payment</Label>
-                  <Select value={paymentMethod} onValueChange={setPaymentMethod}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Enter Payment Mode" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {paymentMethods.map((paymentMethod, index) => (
-                        <SelectItem key={index} value={paymentMethod}>
-                          {paymentMethod}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <label>Payment</label>
+                  <select
+                    value={paymentMethod}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    placeholder="Enter payment method"
+                  >
+                    <option>Enter Payment Mode</option>
+                    {paymentMethods.map((paymentMethod, index) => (
+                      <option key={index} value={paymentMethod}>
+                        {paymentMethod}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
             </div>
           </div>
           <div className="button-submit">
-            <Button type="submit">Register Bike</Button>
+            <button
+              className={classNames("btn-profile", "submit")}
+              type="submit"
+            >
+              Register Bike
+            </button>
           </div>
         </form>
       </div>
