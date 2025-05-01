@@ -104,7 +104,7 @@ function LandingPage() {
       <Header />
       <div className="bodydiv">
         <Suspense fallback={null}>
-          <Canvas shadows>
+          <Canvas shadows camera={{ position: [10, 10, 10] }}>
             <BikeShow />
             <Html fullscreen>
               <div className="overlay-content">
