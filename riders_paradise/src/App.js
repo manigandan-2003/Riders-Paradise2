@@ -104,7 +104,7 @@ function LandingPage() {
       <Header />
       <div className="bodydiv">
         <Suspense fallback={null}>
-          <Canvas shadows>
+          <Canvas shadows camera={{position: [3, 2, 5]}}>
             <BikeShow />
             <Html fullscreen>
               <div className="overlay-content">
@@ -153,7 +153,7 @@ function BikeShow() {
   return (
     <>
       <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
-      <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
+      <PerspectiveCamera makeDefault fov={50} />
       <color args={[0, 0, 0]} attach="background" />
       <CubeCamera resolution={256} frames={Infinity}>
         {(texture) => (
