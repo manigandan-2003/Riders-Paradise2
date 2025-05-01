@@ -13,14 +13,12 @@
 
 .bike-description {
   position: relative;
-  top: 20px;
-  left: 10px;
   width: 95vw;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
   padding: 20px;
   margin: 20px auto;
-  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+  box-sizing: border-box; 
 }
 
 .desc {
@@ -49,13 +47,10 @@
 
 .bike-details {
   background-color: rgba(0, 0, 0, 0.6);
-  position: relative;
-  top: 20px;
-  left: 0;
   width: 95vw;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
-  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+  box-sizing: border-box; 
 }
 
 .bike-details table {
