@@ -1,12 +1,171 @@
 .maincontent {
     position: relative;
-    top: 20%;
+    top: 10%;
     height: fit-content;
     min-height: 80vh;
     background-image: url("../assets/4919.jpg");
     background-size: cover;
     color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 20px;
 }
+
+.testride-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.testride-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e44d26;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #e44d26;
+    outline: none;
+    box-shadow: 0 0 5px rgba(228, 77, 38, 0.5);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.terms-group label {
+    font-size: 1em;
+    color: #555;
+}
+
+.submit-btn {
+    background-color: #e44d26;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c63e1f;
+}
+
+.reset-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+}
+
+.button-group {
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .testride-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 1.1em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .terms-group label {
+        font-size: 0.9em;
+    }
+
+    .maincontent {
+        top: 5%;
+    }
+}
+
+
 
 .label-testride {
     padding-right: 15px;
